@@ -42,6 +42,7 @@
     "friendsofphp/php-cs-fixer": "^2.16",
     "fzaninotto/faker": "^1.9",
     "mikey179/vfsstream": "^1.6",
+    "phpspec/phpspec": "^6.2",
     "phpunit/phpunit": "^8.5"
   },
   "autoload": {
@@ -51,11 +52,13 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Yasumi\\tests\\": "tests/"
+      "Yasumi\\tests\\": "tests/",
+      "spec\\Yasumi\\": "spec/Yasumi"
     }
   },
   "scripts": {
     "format": "./vendor/bin/php-cs-fixer fix .",
+    "spec": "vendor/bin/phpspec run",
     "test": "vendor/bin/phpunit"
   },
   "config": {
