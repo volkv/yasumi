@@ -19,7 +19,7 @@ use Yasumi\Provider\Japan;
 
 class JapanSpec extends ObjectBehavior
 {
-    public function let()
+    public function let(): void
     {
         $this->beConstructedWith(2020);
     }
