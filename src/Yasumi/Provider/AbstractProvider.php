@@ -21,6 +21,7 @@ use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
 use Yasumi\Holiday;
+use Yasumi\HolidayInterface;
 use Yasumi\ProviderInterface;
 use Yasumi\SubstituteHoliday;
 use Yasumi\TranslationsInterface;
@@ -159,6 +160,13 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         }
 
         $this->holidays[$holiday->getKey()] = $holiday;
+        \uasort($this->holidays, [__CLASS__, 'compareDates']);
+    }
+
+    public function add(HolidayInterface $holiday): void
+    {
+        $this->holidays[$holiday->getKey()] = $holiday;
+
         \uasort($this->holidays, [__CLASS__, 'compareDates']);
     }
 
