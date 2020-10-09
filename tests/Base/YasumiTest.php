@@ -513,7 +513,7 @@ class YasumiTest extends TestCase
     public function testRemoveHoliday(): void
     {
         $provider = Yasumi::create('Ireland', 2018);
-        $holidays = $provider->getHolidays();
+        $holidays = $provider->all();
 
         // Assert initial list of holidays
         self::assertCount(13, $holidays);
@@ -535,7 +535,7 @@ class YasumiTest extends TestCase
         $provider->removeHoliday('augustHoliday');
         $provider->removeHoliday('octoberHoliday');
 
-        $holidaysAfterRemoval = $provider->getHolidays();
+        $holidaysAfterRemoval = $provider->all();
 
         // Assert list of holidays after removal of some holidays
         self::assertCount(10, $holidaysAfterRemoval);

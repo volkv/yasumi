@@ -324,7 +324,7 @@ class SouthAfrica extends AbstractProvider
     private function calculateSubstituteHolidays(): void
     {
         // Loop through all defined holidays
-        foreach ($this->getHolidays() as $holiday) {
+        foreach ($this->all() as $holiday) {
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday
             if (0 === (int) $holiday->format('w')) {
                 $date = clone $holiday;

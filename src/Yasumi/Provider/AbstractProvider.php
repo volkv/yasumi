@@ -334,7 +334,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
             }
 
             return $holiday->getKey();
-        }, $this->getHolidays());
+        }, $this->all());
 
         return \count(\array_unique($names));
     }
@@ -344,7 +344,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @return Holiday[] list of all holidays defined for the given year
      */
-    public function getHolidays(): array
+    public function all(): array
     {
         return $this->holidays;
     }
@@ -424,7 +424,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     {
         $this->isHolidayNameNotEmpty($key); // Validate if key is not empty
 
-        $holidays = $this->getHolidays();
+        $holidays = $this->all();
 
         return $holidays[$key] ?? null;
     }
@@ -489,7 +489,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function getIterator(): ArrayIterator
     {
-        return new ArrayIterator($this->getHolidays());
+        return new ArrayIterator($this->all());
     }
 
     /**

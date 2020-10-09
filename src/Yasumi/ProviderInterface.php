@@ -21,8 +21,9 @@ namespace Yasumi;
  */
 interface ProviderInterface
 {
-    /**
-     * Initialize country holidays.
-     */
     public function initialize(): void;
+
+    //public function removeAll();
+
+    public function all(): array;
 }

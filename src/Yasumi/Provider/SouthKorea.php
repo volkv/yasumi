@@ -473,7 +473,7 @@ class SouthKorea extends AbstractProvider
         }
 
         // Initialize holidays variable
-        $holidays = $this->getHolidays();
+        $holidays = $this->all();
         $acceptedHolidays = [
             'dayBeforeSeollal', 'seollal', 'dayAfterSeollal',
             'dayBeforeChuseok', 'chuseok', 'dayAfterChuseok',

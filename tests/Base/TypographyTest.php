@@ -57,7 +57,7 @@ class TypographyTest extends TestCase
         foreach ($classes as $class) {
             $provider = Yasumi::create($class, $this->generateRandomYear());
 
-            foreach ($provider->getHolidays() as $holiday) {
+            foreach ($provider->all() as $holiday) {
                 foreach ($holiday->translations as $locale => $name) {
                     $tests[$name] = [$name, $class, $holiday->getKey(), $locale];
                 }

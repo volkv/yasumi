@@ -268,7 +268,7 @@ class USA extends AbstractProvider
     private function calculateSubstituteHolidays(): void
     {
         // Loop through all defined holidays
-        foreach ($this->getHolidays() as $holiday) {
+        foreach ($this->all() as $holiday) {
             $date = null;
 
             // Substitute holiday is on a Monday in case the holiday falls on a Sunday
