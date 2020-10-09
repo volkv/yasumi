@@ -7,6 +7,13 @@
 [![StyleCI](https://styleci.io/repos/32797151/shield?branch=master)](https://styleci.io/repos/32797151)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/azuyalabs/yasumi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/azuyalabs/yasumi/?branch=master)
 
+Tainted Uranium
+---------------
+!!EXPERIMENTAL!!
+Tainted Uranium is the sandbox / playground branch for the upcoming 3.x version of Yasumi.
+
+!!DO NOT USE IN PRODUCTION!! This branch contains experimental code...
+
 Introduction
 ------------
 Yasumi (Japanese for 'Holiday'「休み」) is the easy PHP library that helps you retrieve the dates and names of holidays and other special celebrations from various countries/states. It is calculation and rule driven avoiding the need of a comprehensive database.
