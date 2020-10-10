@@ -16,11 +16,11 @@ namespace Yasumi\tests\Base;
 
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
-use Yasumi\Filters\BankHolidaysFilter;
-use Yasumi\Filters\ObservedHolidaysFilter;
-use Yasumi\Filters\OfficialHolidaysFilter;
-use Yasumi\Filters\OtherHolidaysFilter;
-use Yasumi\Filters\SeasonalHolidaysFilter;
+use Yasumi\Filters\BankHolidays;
+use Yasumi\Filters\ObservedHolidays;
+use Yasumi\Filters\OfficialHolidays;
+use Yasumi\Filters\OtherHolidays;
+use Yasumi\Filters\SeasonalHolidays;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
@@ -43,7 +43,7 @@ class HolidayFiltersTest extends TestCase
         // There are 11 official holidays in Ireland in the year 2018, with 1 substituted holiday.
         $holidays = Yasumi::create('Ireland', 2018);
 
-        $filteredHolidays = new OfficialHolidaysFilter($holidays->getIterator());
+        $filteredHolidays = new OfficialHolidays($holidays->getIterator());
         $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
@@ -78,7 +78,7 @@ class HolidayFiltersTest extends TestCase
         // There are 2 observed holidays in Ireland in the year 2018.
         $holidays = Yasumi::create('Ireland', 2018);
 
-        $filteredHolidays = new ObservedHolidaysFilter($holidays->getIterator());
+        $filteredHolidays = new ObservedHolidays($holidays->getIterator());
         $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
@@ -113,7 +113,7 @@ class HolidayFiltersTest extends TestCase
         // There are no bank holidays in Ireland in the year 2018.
         $holidays = Yasumi::create('Ireland', 2018);
 
-        $filteredHolidays = new BankHolidaysFilter($holidays->getIterator());
+        $filteredHolidays = new BankHolidays($holidays->getIterator());
         $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
@@ -147,7 +147,7 @@ class HolidayFiltersTest extends TestCase
     {
         $holidays = Yasumi::create('Netherlands', 2017);
 
-        $filteredHolidays = new SeasonalHolidaysFilter($holidays->getIterator());
+        $filteredHolidays = new SeasonalHolidays($holidays->getIterator());
         $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions
@@ -196,7 +196,7 @@ class HolidayFiltersTest extends TestCase
     {
         $holidays = Yasumi::create('Netherlands', 2017);
 
-        $filteredHolidays = new OtherHolidaysFilter($holidays->getIterator());
+        $filteredHolidays = new OtherHolidays($holidays->getIterator());
         $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
 
         // Assert array definitions

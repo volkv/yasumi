@@ -26,7 +26,7 @@ use Yasumi\Holiday;
  * $holidays = Yasumi::create('Netherlands', 2015);
  * $other = new OtherHolidaysFilter($holidays->getIterator());
  */
-class OtherHolidaysFilter extends AbstractFilter
+class OtherHolidays extends BaseFilter
 {
     /**
      * Checks whether the current element of the iterator is an other type of holiday.

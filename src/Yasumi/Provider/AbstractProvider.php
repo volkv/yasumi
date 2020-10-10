@@ -20,8 +20,8 @@ use InvalidArgumentException;
 use IteratorAggregate;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
-use Yasumi\Filters\BetweenFilter;
-use Yasumi\Filters\OnFilter;
+use Yasumi\Filters\Between;
+use Yasumi\Filters\On;
 use Yasumi\Holiday;
 use Yasumi\ProviderInterface;
 use Yasumi\SubstituteHoliday;
@@ -397,12 +397,12 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         \DateTimeInterface $startDate,
         \DateTimeInterface $endDate,
         ?bool $equals = null
-    ): BetweenFilter {
+    ): Between {
         if ($startDate > $endDate) {
             throw new InvalidArgumentException('Start date must be a date before the end date.');
         }
 
-        return new BetweenFilter($this->getIterator(), $startDate, $endDate, $equals ?? true);
+        return new Between($this->getIterator(), $startDate, $endDate, $equals ?? true);
     }
 
     /**
@@ -426,9 +426,9 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @param \DateTimeInterface $date date to check for holidays on
      */
-    public function on(\DateTimeInterface $date): OnFilter
+    public function on(\DateTimeInterface $date): On
     {
-        return new OnFilter($this->getIterator(), $date);
+        return new On($this->getIterator(), $date);
     }
 
     /**

@@ -24,7 +24,7 @@ use Iterator;
  *
  * Note: this class can be used separately, however is implemented by the AbstractProvider::on method.
  */
-class OnFilter extends AbstractFilter
+class On extends BaseFilter
 {
     /**
      * @var string date to check for holidays

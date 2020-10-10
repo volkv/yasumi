@@ -25,7 +25,7 @@ use Iterator;
  *
  * Note: this class can be used separately, however is implemented by the AbstractProvider::between method.
  */
-class BetweenFilter extends AbstractFilter
+class Between extends BaseFilter
 {
     /**
      * @var string start date of the time frame to check against

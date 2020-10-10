@@ -19,10 +19,7 @@ use Countable;
 use FilterIterator;
 use Yasumi\SubstituteHoliday;
 
-/**
- * AbstractFilter.
- */
-abstract class AbstractFilter extends FilterIterator implements Countable
+abstract class BaseFilter extends FilterIterator implements Countable
 {
     /**
      * Returns the number of holidays returned by this iterator.

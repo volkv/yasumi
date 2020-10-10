@@ -17,22 +17,22 @@ namespace Yasumi\Filters;
 use Yasumi\Holiday;
 
 /**
- * SeasonalHolidaysFilter is a class for filtering all seasonal holidays.
+ * BankHolidaysFilter is a class for filtering all bank holidays.
  *
- * OfficialHolidaysFilter is a class that returns all holidays that are considered seasonal of any given holiday
+ * BankHolidaysFilter is a class that returns all holidays that are considered bank holidays of any given holiday
  * provider.
  *
  * Example usage:
  * $holidays = Yasumi::create('Netherlands', 2015);
- * $seasonal = new SeasonalHolidaysFilter($holidays->getIterator());
+ * $bank = new BankHolidaysFilter($holidays->getIterator());
  */
-class SeasonalHolidaysFilter extends AbstractFilter
+class BankHolidays extends BaseFilter
 {
     /**
-     * Checks whether the current element of the iterator is a seasonal holiday.
+     * Checks whether the current element of the iterator is an observed holiday.
      */
     public function accept(): bool
     {
-        return Holiday::TYPE_SEASON === $this->getInnerIterator()->current()->getType();
+        return Holiday::TYPE_BANK === $this->getInnerIterator()->current()->getType();
     }
 }

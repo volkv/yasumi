@@ -26,11 +26,11 @@ use ReflectionException;
 use RuntimeException;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
-use Yasumi\Filters\BankHolidaysFilter;
-use Yasumi\Filters\ObservedHolidaysFilter;
-use Yasumi\Filters\OfficialHolidaysFilter;
-use Yasumi\Filters\OtherHolidaysFilter;
-use Yasumi\Filters\SeasonalHolidaysFilter;
+use Yasumi\Filters\BankHolidays;
+use Yasumi\Filters\ObservedHolidays;
+use Yasumi\Filters\OfficialHolidays;
+use Yasumi\Filters\OtherHolidays;
+use Yasumi\Filters\SeasonalHolidays;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 use Yasumi\Yasumi;
@@ -67,19 +67,19 @@ trait YasumiBase
 
         switch ($type) {
             case Holiday::TYPE_OFFICIAL:
-                $holidays = new OfficialHolidaysFilter($holidays->getIterator());
+                $holidays = new OfficialHolidays($holidays->getIterator());
                 break;
             case Holiday::TYPE_OBSERVANCE:
-                $holidays = new ObservedHolidaysFilter($holidays->getIterator());
+                $holidays = new ObservedHolidays($holidays->getIterator());
                 break;
             case Holiday::TYPE_SEASON:
-                $holidays = new SeasonalHolidaysFilter($holidays->getIterator());
+                $holidays = new SeasonalHolidays($holidays->getIterator());
                 break;
             case Holiday::TYPE_BANK:
-                $holidays = new BankHolidaysFilter($holidays->getIterator());
+                $holidays = new BankHolidays($holidays->getIterator());
                 break;
             case Holiday::TYPE_OTHER:
-                $holidays = new OtherHolidaysFilter($holidays->getIterator());
+                $holidays = new OtherHolidays($holidays->getIterator());
                 break;
         }
 

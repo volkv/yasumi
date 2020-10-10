@@ -17,22 +17,22 @@ namespace Yasumi\Filters;
 use Yasumi\Holiday;
 
 /**
- * OfficialHolidaysFilter is a class for filtering all official holidays.
+ * ObservedHolidaysFilter is a class for filtering all observed holidays.
  *
- * OfficialHolidaysFilter is a class that returns all holidays that are considered official of any given
- * holiday provider.
+ * ObservedHolidaysFilter is a class that returns all holidays that are considered observed of any given holiday
+ * provider.
  *
  * Example usage:
  * $holidays = Yasumi::create('Netherlands', 2015);
- * $official = new OfficialHolidaysFilter($holidays->getIterator());
+ * $observed = new ObservedHolidaysFilter($holidays->getIterator());
  */
-class OfficialHolidaysFilter extends AbstractFilter
+class ObservedHolidays extends BaseFilter
 {
     /**
-     * Checks whether the current element of the iterator is an official holiday.
+     * Checks whether the current element of the iterator is an observed holiday.
      */
     public function accept(): bool
     {
-        return Holiday::TYPE_OFFICIAL === $this->getInnerIterator()->current()->getType();
+        return Holiday::TYPE_OBSERVANCE === $this->getInnerIterator()->current()->getType();
     }
 }
