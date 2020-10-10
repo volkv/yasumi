@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -21,7 +23,7 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Vaud (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Vaud
+ * @see https://en.wikipedia.org/wiki/Vaud
  */
 class Vaud extends Switzerland
 {

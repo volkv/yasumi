@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -36,12 +38,12 @@ class YasumiTest extends TestCase
     use YasumiBase;
 
     /**
-     * The lower year limit supported by Yasumi
+     * The lower year limit supported by Yasumi.
      */
     public const YEAR_LOWER_BOUND = 1000;
 
     /**
-     * The upper year limit supported by Yasumi
+     * The upper year limit supported by Yasumi.
      */
     public const YEAR_UPPER_BOUND = 9999;
 
@@ -95,6 +97,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that Yasumi allows external classes that extend the ProviderInterface.
+     *
      * @throws ReflectionException
      */
     public function testCreateWithAbstractExtension(): void
@@ -124,7 +127,8 @@ class YasumiTest extends TestCase
     }
 
     /**
-     * Tests that the count function returns an integer and a correct count for the test holiday provider
+     * Tests that the count function returns an integer and a correct count for the test holiday provider.
+     *
      * @throws ReflectionException
      */
     public function testCount(): void
@@ -138,7 +142,8 @@ class YasumiTest extends TestCase
     }
 
     /**
-     * Tests that the getType function returns a string for the test holiday provider
+     * Tests that the getType function returns a string for the test holiday provider.
+     *
      * @throws ReflectionException
      */
     public function testGetType(): void
@@ -150,7 +155,8 @@ class YasumiTest extends TestCase
     }
 
     /**
-     * Tests that the getYear function returns an integer for the test holiday provider
+     * Tests that the getYear function returns an integer for the test holiday provider.
+     *
      * @throws ReflectionException
      */
     public function testGetYear(): void
@@ -163,7 +169,7 @@ class YasumiTest extends TestCase
     }
 
     /**
-     * Tests that the next function returns the next upcoming date (i.e. next year) for the given holiday
+     * Tests that the next function returns the next upcoming date (i.e. next year) for the given holiday.
      *
      * @throws ReflectionException
      */
@@ -195,7 +201,7 @@ class YasumiTest extends TestCase
     }
 
     /**
-     * Tests the previous function returns the previous date (i.e. previous year) for the given holiday
+     * Tests the previous function returns the previous date (i.e. previous year) for the given holiday.
      *
      * @throws ReflectionException
      */
@@ -233,7 +239,8 @@ class YasumiTest extends TestCase
     }
 
     /**
-     * Tests that the getHolidayNames function returns an array and a correct count for the test holiday provider
+     * Tests that the getHolidayNames function returns an array and a correct count for the test holiday provider.
+     *
      * @throws ReflectionException
      */
     public function testGetHolidayNames(): void
@@ -248,6 +255,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the WhenIs function returns a string representation of the date the given holiday occurs.
+     *
      * @throws ReflectionException
      */
     public function testWhenIs(): void
@@ -289,6 +297,7 @@ class YasumiTest extends TestCase
     /**
      * Tests that the whatWeekDayIs function returns an integer representation of the day of the week the given holiday
      * is occurring.
+     *
      * @throws ReflectionException
      */
     public function testWhatWeekDayIs(): void
@@ -315,6 +324,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the getProviders function returns an array containing all available holiday providers.
+     *
      * @throws ReflectionException
      */
     public function testGetProviders(): void
@@ -364,7 +374,7 @@ class YasumiTest extends TestCase
     {
         $year = 2110;
         $provider = 'Spain';
-        $date = $year . '-08-15';
+        $date = $year.'-08-15';
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new DateTime($date));
@@ -392,7 +402,7 @@ class YasumiTest extends TestCase
     {
         $year = 5220;
         $provider = 'Japan';
-        $date = $year . '-06-10';
+        $date = $year.'-06-10';
 
         // Assertion using a DateTime instance
         $isHoliday = Yasumi::create($provider, $year)->isHoliday(new DateTime($date));
@@ -409,7 +419,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the isHoliday function throws a TypeError when the given argument is not an instance that
-     * implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
+     * implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable).
      *
      * @throws ReflectionException
      */
@@ -417,7 +427,7 @@ class YasumiTest extends TestCase
     {
         $this->expectException(\TypeError::class);
 
-        /** @noinspection PhpParamsInspection */
+        /* @noinspection PhpParamsInspection */
         Yasumi::create('Spain', Factory::create()->numberBetween(
             self::YEAR_LOWER_BOUND,
             self::YEAR_UPPER_BOUND
@@ -437,7 +447,7 @@ class YasumiTest extends TestCase
     {
         $year = 2020;
         $provider = 'Netherlands';
-        $date = $year . '-06-02';
+        $date = $year.'-06-02';
 
         // Assertion using a DateTime instance
         $isWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new DateTime($date));
@@ -465,7 +475,7 @@ class YasumiTest extends TestCase
     {
         $year = 2016;
         $provider = 'Japan';
-        $date = $year . '-01-11';
+        $date = $year.'-01-11';
 
         // Assertion using a DateTime instance
         $isNotWorkingDay = Yasumi::create($provider, $year)->isWorkingDay(new DateTime($date));
@@ -482,16 +492,17 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that the isWorkingDay function throws a TypeError when the given argument is not an instance
-     * that implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable)
+     * that implements the DateTimeInterface (e.g. DateTime or DateTimeImmutable).
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
+     *
      * @throws ReflectionException
      */
     public function testIsWorkingDayException(): void
     {
         $this->expectException(\TypeError::class);
 
-        /** @noinspection PhpParamsInspection */
+        /* @noinspection PhpParamsInspection */
         Yasumi::create('SouthAfrica', Factory::create()->numberBetween(
             self::YEAR_LOWER_BOUND,
             self::YEAR_UPPER_BOUND
@@ -499,7 +510,7 @@ class YasumiTest extends TestCase
     }
 
     /**
-     * Tests that holidays successfully can be removed from the list of holidays of a provider
+     * Tests that holidays successfully can be removed from the list of holidays of a provider.
      *
      * @throws ReflectionException
      */
@@ -549,7 +560,7 @@ class YasumiTest extends TestCase
 
     /**
      * Tests that a holiday provider instance can be created by using the ISO3166-2
-     * country/region code. (Using the Yasumi::createByISO3166_2 method)
+     * country/region code. (Using the Yasumi::createByISO3166_2 method).
      *
      * @throws ReflectionException
      */

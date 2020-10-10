@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
@@ -23,7 +25,7 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Neuchâtel (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Canton_of_Neuch%C3%A2tel
+ * @see https://en.wikipedia.org/wiki/Canton_of_Neuch%C3%A2tel
  */
 class Neuchatel extends Switzerland
 {
@@ -66,9 +68,9 @@ class Neuchatel extends Switzerland
     }
 
     /**
-     * Instauration de la République
+     * Instauration de la République.
      *
-     * @link https://www.feiertagskalender.ch/feiertag.php?ft_id=11&geo=3056&hl=fr
+     * @see https://www.feiertagskalender.ch/feiertag.php?ft_id=11&geo=3056&hl=fr
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -83,7 +85,7 @@ class Neuchatel extends Switzerland
                 [
                     'fr' => 'Instauration de la République',
                 ],
-                new DateTime($this->year . '-03-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new DateTime($this->year.'-03-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));
