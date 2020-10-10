@@ -162,6 +162,16 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         \uasort($this->holidays, [__CLASS__, 'compareDates']);
     }
 
+    public function add(Holiday ...$holidays): void
+    {
+        // @todo check how to implement merging the global translations
+
+        foreach ($holidays as $holiday) {
+            $this->holidays[$holiday->getKey()] = $holiday;
+        }
+        \uasort($this->holidays, [__CLASS__, 'compareDates']);
+    }
+
 
     /**
      * Removes a holiday from the holidays providers (i.e. country/state) list of holidays.
@@ -340,9 +350,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     }
 
     /**
-     * Gets all of the holidays defined by this holiday provider (for the given year).
-     *
-     * @return Holiday[] list of all holidays defined for the given year
+     * @inheritdoc
      */
     public function all(): array
     {

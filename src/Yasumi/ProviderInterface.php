@@ -25,5 +25,12 @@ interface ProviderInterface
 
     //public function removeAll();
 
+    public function add(Holiday ...$holidays): void;
+
+    /**
+     * Returns all of the holidays defined by this holiday provider (for the given year).
+     *
+     * @return Holiday[] list of all holidays defined for the given year
+     */
     public function all(): array;
 }

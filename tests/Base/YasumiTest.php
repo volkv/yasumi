@@ -14,13 +14,11 @@ namespace Yasumi\tests\Base;
 
 use DateTime;
 use DateTimeImmutable;
-use Exception;
 use Faker\Factory;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 use stdClass;
-use TypeError;
 use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
@@ -358,9 +356,8 @@ class YasumiTest extends TestCase
      * Note that this function does *NOT* determine whether a date is a working or non-working day. It
      * only asserts that it is a date calculated by the Holiday Provider.
      *
-     * @throws Exception
      * @throws ReflectionException
-     * @throws Exception
+     * @throws \Exception
      * @throws ReflectionException
      */
     public function testIsHoliday(): void
@@ -388,9 +385,7 @@ class YasumiTest extends TestCase
      * Note that this function does *NOT* determine whether a date is a working or non-working day. It
      * only asserts that it is a date calculated by the Holiday Provider.
      *
-     * @throws Exception
-     * @throws ReflectionException
-     * @throws Exception
+     * @throws \Exception
      * @throws ReflectionException
      */
     public function testIsNotHoliday(): void
@@ -420,7 +415,7 @@ class YasumiTest extends TestCase
      */
     public function testIsHolidayException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         /** @noinspection PhpParamsInspection */
         Yasumi::create('Spain', Factory::create()->numberBetween(
@@ -434,9 +429,8 @@ class YasumiTest extends TestCase
      * the weekend.
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
-     * @throws Exception
-     * @throws ReflectionException
-     * @throws Exception
+     *
+     * @throws \Exception
      * @throws ReflectionException
      */
     public function testIsWorkingDay(): void
@@ -463,9 +457,8 @@ class YasumiTest extends TestCase
      * the weekend.
      *
      * @TODO Add additional unit tests for those holiday providers that differ from the global definition
-     * @throws Exception
-     * @throws ReflectionException
-     * @throws Exception
+     *
+     * @throws \Exception
      * @throws ReflectionException
      */
     public function testIsNotWorkingDay(): void
@@ -496,7 +489,7 @@ class YasumiTest extends TestCase
      */
     public function testIsWorkingDayException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         /** @noinspection PhpParamsInspection */
         Yasumi::create('SouthAfrica', Factory::create()->numberBetween(
@@ -593,7 +586,7 @@ class YasumiTest extends TestCase
      * tests that the same holiday instance isn't added twice.
      *
      * @throws ReflectionException
-     * @throws Exception
+     * @throws \Exception
      */
     public function testAddExistingHoliday(): void
     {
@@ -617,5 +610,69 @@ class YasumiTest extends TestCase
         self::assertNotSameSize($originalHolidays, $provider->getHolidayNames());
         self::assertEquals($newHolidays, $provider->getHolidayNames());
         self::assertNotEquals($originalHolidays, $provider->getHolidayNames());
+    }
+
+    /**
+     * @throws ReflectionException
+     * @throws \Exception
+     */
+    public function testAddHolidays(): void
+    {
+        $provider = Yasumi::createByISO3166_2('NL', 2020);
+
+        $holidayName = 'aNewHoliday';
+
+        $holiday = new Holiday($holidayName, [], new DateTime());
+        $originalHolidays = $provider->getHolidayNames();
+
+        // Add a new holiday
+        $provider->add($holiday);
+        $newHolidays = $provider->getHolidayNames();
+        self::assertContains($holidayName, $provider->getHolidayNames());
+        self::assertNotSameSize($originalHolidays, $newHolidays);
+        self::assertNotEquals($newHolidays, $originalHolidays);
+
+        // Add same holiday again (double check)
+        $provider->add($holiday);
+        $holidayNames = $provider->getHolidayNames();
+        self::assertContains($holidayName, $holidayNames);
+        self::assertSameSize($newHolidays, $holidayNames);
+        self::assertNotSameSize($originalHolidays, $holidayNames);
+        self::assertEquals($newHolidays, $holidayNames);
+        self::assertNotEquals($originalHolidays, $holidayNames);
+    }
+
+    /**
+     * @throws ReflectionException
+     * @throws \Exception
+     */
+    public function testAddMultipleHolidays(): void
+    {
+        $provider = Yasumi::createByISO3166_2('ES', 2020);
+
+        $starHolidayName = 'starHoliday';
+        $starHoliday = new Holiday($starHolidayName, [], new DateTime('2020-12-12'));
+
+        $warsHolidayName = 'warsHoliday';
+        $warsHoliday = new Holiday($warsHolidayName, [], new DateTime('2020-12-13'));
+
+        $originalHolidays = $provider->getHolidayNames();
+
+        // Add a new holidays
+        $provider->add($starHoliday, $warsHoliday);
+        $newHolidays = $provider->getHolidayNames();
+        self::assertContains($starHolidayName, $provider->getHolidayNames());
+        self::assertContains($warsHolidayName, $provider->getHolidayNames());
+        self::assertNotEquals($newHolidays, $originalHolidays);
+
+        // Add same holidays again (double check)
+        $provider->add($starHoliday, $warsHoliday);
+        $holidayNames = $provider->getHolidayNames();
+        self::assertContains($starHolidayName, $provider->getHolidayNames());
+        self::assertContains($warsHolidayName, $provider->getHolidayNames());
+        self::assertSameSize($newHolidays, $holidayNames);
+        self::assertNotSameSize($originalHolidays, $holidayNames);
+        self::assertEquals($newHolidays, $holidayNames);
+        self::assertNotEquals($originalHolidays, $holidayNames);
     }
 }
