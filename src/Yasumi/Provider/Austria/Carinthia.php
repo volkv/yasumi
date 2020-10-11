@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Austria;
 
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\InvalidDate;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Austria;
@@ -36,7 +36,6 @@ class Carinthia extends Austria
     /**
      * Initialize holidays for Carinthia (Austria).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -60,7 +59,7 @@ class Carinthia extends Austria
      *
      * @see https://en.wikipedia.org/wiki/1920_Carinthian_plebiscite
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

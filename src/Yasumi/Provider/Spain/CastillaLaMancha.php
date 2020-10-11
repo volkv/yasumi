@@ -16,7 +16,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\InvalidDate;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -46,7 +46,7 @@ class CastillaLaMancha extends Spain
     /**
      * Initialize holidays for Castilla-La Mancha (Spain).
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -75,7 +75,7 @@ class CastillaLaMancha extends Spain
      *
      * @see https://www.timeanddate.com/holidays/spain/castile-la-mancha-day
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

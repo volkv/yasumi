@@ -16,7 +16,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
@@ -43,7 +42,6 @@ class Ireland extends AbstractProvider
     /**
      * Initialize holidays for Ireland.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -91,7 +89,6 @@ class Ireland extends AbstractProvider
      *       states that New Years Day is substituted the *next* day if it does not fall on a weekday. So what if it
      *       falls on a Saturday?
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -127,7 +124,6 @@ class Ireland extends AbstractProvider
      * @see http://www.irishstatutebook.ie/eli/1939/act/1/section/8/enacted/en/html
      * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -149,10 +145,8 @@ class Ireland extends AbstractProvider
      *
      * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateChristmasDay(): void
@@ -189,10 +183,8 @@ class Ireland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/St._Stephen%27s_Day
      * @see  ChristianHolidays
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateStStephensDay(): void
@@ -231,10 +223,8 @@ class Ireland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateStPatricksDay(): void
@@ -276,10 +266,8 @@ class Ireland extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/May_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateMayDay(): void
@@ -304,10 +292,8 @@ class Ireland extends AbstractProvider
      *
      * @see http://www.irishstatutebook.ie/eli/1961/act/33/section/8/enacted/en/html
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateJuneHoliday(): void
@@ -331,10 +317,8 @@ class Ireland extends AbstractProvider
      *
      * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateOctoberHoliday(): void

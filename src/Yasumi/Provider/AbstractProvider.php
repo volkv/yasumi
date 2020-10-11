@@ -18,7 +18,6 @@ use ArrayIterator;
 use Countable;
 use InvalidArgumentException;
 use IteratorAggregate;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\Between;
 use Yasumi\Filters\On;
@@ -170,8 +169,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                                 \DateTime)
      *
      * @return bool true if date represents a working day, otherwise false
-     *
-     * @throws InvalidDateException
      */
     public function isWorkingDay(\DateTimeInterface $date): bool
     {
@@ -185,8 +182,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                                 \DateTime)
      *
      * @return bool true if date represents a holiday, otherwise false
-     *
-     * @throws InvalidDateException
      */
     public function isHoliday(\DateTimeInterface $date): bool
     {
@@ -217,8 +212,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                                 \DateTime)
      *
      * @return bool true if date represents a weekend day, otherwise false
-     *
-     * @throws InvalidDateException
      */
     public function isWeekendDay(\DateTimeInterface $date): bool
     {

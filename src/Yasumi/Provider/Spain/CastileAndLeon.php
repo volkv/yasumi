@@ -16,7 +16,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\InvalidDate;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -46,7 +46,7 @@ class CastileAndLeon extends Spain
     /**
      * Initialize holidays for Castile and León (Spain).
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -72,7 +72,7 @@ class CastileAndLeon extends Spain
      *
      * @see https://en.wikipedia.org/wiki/Castile_and_León_Day
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

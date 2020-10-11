@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Canada;
 
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
@@ -39,7 +38,6 @@ class Saskatchewan extends Canada
     /**
      * Initialize holidays for Saskatchewan (Canada).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -60,7 +58,6 @@ class Saskatchewan extends Canada
      *
      * @see https://en.wikipedia.org/wiki/Civic_Holiday
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

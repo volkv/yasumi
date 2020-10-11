@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Germany;
 
-use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\InvalidDate;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\Germany;
 
@@ -39,7 +39,7 @@ class MecklenburgWesternPomerania extends Germany
     /**
      * Initialize holidays for Mecklenburg-Western Pomerania (Germany).
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -56,7 +56,7 @@ class MecklenburgWesternPomerania extends Germany
      * For the German state of Mecklenburg-Western Pomerania, Reformation Day was celebrated since 1517.
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

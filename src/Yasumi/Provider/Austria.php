@@ -16,7 +16,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -37,7 +36,6 @@ class Austria extends AbstractProvider
     /**
      * Initialize holidays for Austria.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -79,7 +77,6 @@ class Austria extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Leopold_III,_Margrave_of_Austria
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -108,7 +105,6 @@ class Austria extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Declaration_of_Neutrality
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

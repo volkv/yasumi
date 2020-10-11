@@ -16,7 +16,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 
@@ -37,7 +36,6 @@ class Canada extends AbstractProvider
     /**
      * Initialize holidays for Canada.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -67,7 +65,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Family_Day_(Canada)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -91,7 +88,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Victoria_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -115,7 +111,6 @@ class Canada extends AbstractProvider
      *
      * @see https://www.rcaanc-cirnac.gc.ca/eng/1100100013248/1534872397533
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -139,7 +134,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Canada_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -163,7 +157,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Civic_Holiday
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -187,7 +180,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Thanksgiving_(Canada)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -211,7 +203,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Remembrance_Day_(Canada)
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -235,7 +226,6 @@ class Canada extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Labour_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

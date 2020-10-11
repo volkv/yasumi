@@ -16,7 +16,7 @@ namespace Yasumi\Provider\UnitedKingdom;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
+use Yasumi\Exception\InvalidDate;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -48,7 +48,7 @@ class Scotland extends UnitedKingdom
     /**
      * Initialize holidays for the United Kingdom.
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -80,7 +80,7 @@ class Scotland extends UnitedKingdom
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
      * @see https://www.timeanddate.com/holidays/uk/new-year-day
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -141,7 +141,7 @@ class Scotland extends UnitedKingdom
      * @see https://www.timeanddate.com/holidays/uk/summer-bank-holiday
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_Scotland
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -168,7 +168,7 @@ class Scotland extends UnitedKingdom
      *
      * @see https://en.wikipedia.org/wiki/Saint_Andrew%27s_Day
      *
-     * @throws InvalidDateException
+     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

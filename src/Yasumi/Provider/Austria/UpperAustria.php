@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Austria;
 
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Austria;
@@ -36,7 +35,6 @@ class UpperAustria extends Austria
     /**
      * Initialize holidays for Upper Austria (Austria).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -62,7 +60,6 @@ class UpperAustria extends Austria
      *
      * @see https://en.wikipedia.org/wiki/Saint_Florian
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

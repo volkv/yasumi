@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Canada;
 
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
@@ -40,7 +39,6 @@ class NewfoundlandAndLabrador extends Canada
     /**
      * Initialize holidays for Newfoundland and Labrador (Canada).
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -67,10 +65,8 @@ class NewfoundlandAndLabrador extends Canada
      *
      * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateStPatricksDay(): void
@@ -113,10 +109,8 @@ class NewfoundlandAndLabrador extends Canada
      *
      * @see https://en.wikipedia.org/wiki/The_Twelfth
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
-     * @throws \Exception
      * @throws \Exception
      */
     private function calculateOrangemensDay(): void

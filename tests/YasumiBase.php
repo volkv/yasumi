@@ -24,7 +24,6 @@ use InvalidArgumentException;
 use PHPUnit\Framework\AssertionFailedError;
 use ReflectionException;
 use RuntimeException;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BankHolidays;
 use Yasumi\Filters\ObservedHolidays;
@@ -98,7 +97,6 @@ trait YasumiBase
      * @param DateTime $expected the date to be checked against
      *
      * @throws UnknownLocaleException
-     * @throws InvalidDateException
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws AssertionFailedError
@@ -127,7 +125,6 @@ trait YasumiBase
      * @param DateTime $expected the date to be checked against
      *
      * @throws UnknownLocaleException
-     * @throws InvalidDateException
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws AssertionFailedError
@@ -157,7 +154,6 @@ trait YasumiBase
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws UnknownLocaleException
-     * @throws InvalidDateException
      * @throws AssertionFailedError
      * @throws ReflectionException
      */
@@ -183,7 +179,6 @@ trait YasumiBase
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws UnknownLocaleException
-     * @throws InvalidDateException
      * @throws AssertionFailedError
      * @throws ReflectionException
      */

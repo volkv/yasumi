@@ -17,7 +17,6 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
@@ -43,7 +42,6 @@ class SouthAfrica extends AbstractProvider
     /**
      * Initialize holidays for South Africa.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -92,7 +90,6 @@ class SouthAfrica extends AbstractProvider
      *
      * @see https://www.gov.za/about-sa/public-holidays#21march
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -114,7 +111,6 @@ class SouthAfrica extends AbstractProvider
      *
      * @see https://www.gov.za/documents/public-holidays-act
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -137,7 +133,6 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/documents/public-holidays-act
      * @see https://www.gov.za/freedom-day-2014
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -164,7 +159,6 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/documents/public-holidays-act
      * @see https://www.gov.za/youth-day-2014
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -187,7 +181,6 @@ class SouthAfrica extends AbstractProvider
      *
      * @see https://www.gov.za/speeches/president-jacob-zuma-declares-3-august-2016-public-holiday-24-jun-2016-0000
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -216,7 +209,6 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/about-sa/public-holidays#women
      * @see https://www.gov.za/womens-day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -241,7 +233,6 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/documents/public-holidays-act
      * @see https://www.gov.za/heritage-day-2014
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -268,7 +259,6 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/documents/public-holidays-act
      * @see https://www.gov.za/day-reconciliation-2014
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -294,7 +284,6 @@ class SouthAfrica extends AbstractProvider
      *
      * @see https://www.gov.za/documents/public-holidays-act
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -319,7 +308,6 @@ class SouthAfrica extends AbstractProvider
      * The Public Holidays Act (Act No 36 of 1994) determines whenever any public holiday falls on a Sunday, the Monday
      * following on it shall be a public holiday.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

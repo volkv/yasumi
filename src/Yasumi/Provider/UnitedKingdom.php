@@ -16,7 +16,6 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
@@ -41,7 +40,6 @@ class UnitedKingdom extends AbstractProvider
     /**
      * Initialize holidays for the United Kingdom.
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -72,7 +70,6 @@ class UnitedKingdom extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      * @see https://www.timeanddate.com/holidays/uk/new-year-day
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -111,7 +108,6 @@ class UnitedKingdom extends AbstractProvider
      *
      * @see https://www.timeanddate.com/holidays/uk/early-may-bank-holiday
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -156,7 +152,6 @@ class UnitedKingdom extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/uk/spring-bank-holiday
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -202,7 +197,6 @@ class UnitedKingdom extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/uk/summer-bank-holiday
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_United_Kingdom
      *
-     * @throws InvalidDateException
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
