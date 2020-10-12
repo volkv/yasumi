@@ -20,6 +20,7 @@ use InvalidArgumentException;
 use JsonSerializable;
 use Yasumi\Exception\MissingTranslationException;
 use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Translation\TranslationsInterface;
 
 /**
  * Class Holiday.

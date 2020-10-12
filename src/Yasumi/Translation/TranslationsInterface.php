@@ -12,7 +12,7 @@ declare(strict_types=1);
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi;
+namespace Yasumi\Translation;
 
 /**
  * Interface TranslationsInterface.
