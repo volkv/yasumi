@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Germany;
 
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Provider\Germany;
 
 /**
@@ -39,7 +39,7 @@ class LowerSaxony extends Germany
      * Initialize holidays for Lower Saxony (Germany).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -57,7 +57,7 @@ class LowerSaxony extends Germany
      * @see https://www.zeit.de/gesellschaft/zeitgeschehen/2018-06/reformationstag-niedersachsen-neuer-feiertag
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateReformationDay(): void

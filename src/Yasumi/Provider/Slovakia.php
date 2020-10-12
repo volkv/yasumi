@@ -16,7 +16,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -61,7 +61,7 @@ class Slovakia extends AbstractProvider
      * Initialize holidays for Slovakia.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -111,7 +111,7 @@ class Slovakia extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_Slovakia
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSlovakIndependenceDay(): void
@@ -135,7 +135,7 @@ class Slovakia extends AbstractProvider
      * Note: this holiday is common for Czech republic and Slovakia.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSaintsCyrilAndMethodiusDay(): void
@@ -159,7 +159,7 @@ class Slovakia extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Slovak_National_Uprising
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSlovakNationalUprisingDay(): void
@@ -182,7 +182,7 @@ class Slovakia extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Constitution_of_Slovakia
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSlovakConstitutionDay(): void
@@ -209,7 +209,7 @@ class Slovakia extends AbstractProvider
      * @see https://sk.wikipedia.org/wiki/Sedembolestn%C3%A1_Panna_M%C3%A1ria
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateOurLadyOfSorrowsDay(): void
@@ -226,7 +226,7 @@ class Slovakia extends AbstractProvider
      * Note: this national day is common for Czech republic and Slovakia.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateStruggleForFreedomAndDemocracyDay(): void

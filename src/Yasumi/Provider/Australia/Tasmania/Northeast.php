@@ -16,7 +16,7 @@ namespace Yasumi\Provider\Australia\Tasmania;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -37,7 +37,7 @@ class Northeast extends Tasmania
      * Initialize holidays for northeastern Tasmania (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void

@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Germany;
 
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Provider\Germany;
 
 /**
@@ -38,7 +38,7 @@ class Bremen extends Germany
      * Initialize holidays for Bremen (Germany).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -54,7 +54,7 @@ class Bremen extends Germany
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateReformationDay(): void

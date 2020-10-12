@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -43,7 +43,7 @@ class BasqueCountry extends Spain
      * Initialize holidays for Basque Country (Spain).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -71,7 +71,7 @@ class BasqueCountry extends Spain
      * @see https://www.officeholidays.com/holidays/day-of-the-basque-country
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateBasqueCountryDay(): void

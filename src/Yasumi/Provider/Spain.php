@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -36,7 +36,7 @@ class Spain extends AbstractProvider
      * Initialize holidays for Spain.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -74,7 +74,7 @@ class Spain extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Fiesta_Nacional_de_España
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateNationalDay(): void
@@ -102,7 +102,7 @@ class Spain extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/spain/constitution-day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateConstitutionDay(): void

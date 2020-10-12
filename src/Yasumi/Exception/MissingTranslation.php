@@ -19,7 +19,7 @@ use Exception as BaseException;
 /**
  * Class MissingTranslationException.
  */
-class MissingTranslationException extends BaseException implements Exception
+class MissingTranslation extends BaseException implements Exception
 {
     /**
      * Initializes the Exception instance.

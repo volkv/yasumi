@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Germany;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Germany;
@@ -41,7 +41,7 @@ class Saxony extends Germany
      * Initialize holidays for Saxony (Germany).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -58,7 +58,7 @@ class Saxony extends Germany
      * Note: In 2017 all German states will celebrate Reformation Day for its 500th anniversary.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateReformationDay(): void
@@ -83,7 +83,7 @@ class Saxony extends Germany
      * @see https://en.wikipedia.org/wiki/Bu%C3%9F-_und_Bettag
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateRepentanceAndPrayerDay(): void

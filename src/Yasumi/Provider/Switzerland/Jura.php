@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Switzerland;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -40,7 +40,7 @@ class Jura extends Switzerland
      * Initialize holidays for Jura (Switzerland).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -73,7 +73,7 @@ class Jura extends Switzerland
      * @see https://fr.wikipedia.org/wiki/Pl%C3%A9biscite_jurassien
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculatePlebisciteJurassien(): void

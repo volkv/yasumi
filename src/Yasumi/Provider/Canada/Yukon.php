@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Canada;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -39,7 +39,7 @@ class Yukon extends Canada
      * Initialize holidays for Yukon (Canada).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -60,7 +60,7 @@ class Yukon extends Canada
      * @see https://en.wikipedia.org/wiki/Civic_Holiday
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateDiscoveryDay(): void
@@ -83,7 +83,7 @@ class Yukon extends Canada
      * @see https://en.wikipedia.org/wiki/Family_Day_(Canada)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateHeritageDay(): void

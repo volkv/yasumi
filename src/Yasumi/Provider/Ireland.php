@@ -16,7 +16,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 
@@ -43,7 +43,7 @@ class Ireland extends AbstractProvider
      * Initialize holidays for Ireland.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -90,7 +90,7 @@ class Ireland extends AbstractProvider
      *       falls on a Saturday?
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateNewYearsDay(): void
@@ -125,7 +125,7 @@ class Ireland extends AbstractProvider
      * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculatePentecostMonday(): void
@@ -146,7 +146,7 @@ class Ireland extends AbstractProvider
      * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateChristmasDay(): void
@@ -184,7 +184,7 @@ class Ireland extends AbstractProvider
      * @see  ChristianHolidays
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateStStephensDay(): void
@@ -224,7 +224,7 @@ class Ireland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateStPatricksDay(): void
@@ -267,7 +267,7 @@ class Ireland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/May_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateMayDay(): void
@@ -293,7 +293,7 @@ class Ireland extends AbstractProvider
      * @see http://www.irishstatutebook.ie/eli/1961/act/33/section/8/enacted/en/html
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateJuneHoliday(): void
@@ -318,7 +318,7 @@ class Ireland extends AbstractProvider
      * @see http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateOctoberHoliday(): void

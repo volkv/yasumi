@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\Austria;
 
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Provider\Austria;
 
 /**
@@ -34,7 +34,7 @@ class Styria extends Austria
      * Initialize holidays for Styria (Austria).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void

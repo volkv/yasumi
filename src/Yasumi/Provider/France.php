@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -36,7 +36,7 @@ class France extends AbstractProvider
      * Initialize holidays for France.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -80,7 +80,7 @@ class France extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Bastille_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateBastilleDay(): void

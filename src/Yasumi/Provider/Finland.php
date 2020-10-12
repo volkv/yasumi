@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -36,7 +36,7 @@ class Finland extends AbstractProvider
      * Initialize holidays for Finland.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -79,7 +79,7 @@ class Finland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Midsummer#Finland
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateStJohnsDay(): void
@@ -112,7 +112,7 @@ class Finland extends AbstractProvider
      * @see https://fi.wikipedia.org/wiki/Pyh%C3%A4inp%C3%A4iv%C3%A4
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateAllSaintsDay(): void
@@ -139,7 +139,7 @@ class Finland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Independence_Day_(Finland)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateIndependenceDay(): void

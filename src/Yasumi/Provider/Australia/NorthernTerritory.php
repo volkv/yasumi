@@ -16,7 +16,7 @@ namespace Yasumi\Provider\Australia;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -38,7 +38,7 @@ class NorthernTerritory extends Australia
      * Initialize holidays for Northern Territory (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void

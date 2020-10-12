@@ -16,7 +16,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -37,7 +37,7 @@ class Brazil extends AbstractProvider
      * Initialize holidays for Brazil.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void

@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Canada;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -39,7 +39,7 @@ class PrinceEdwardIsland extends Canada
      * Initialize holidays for Prince Edward Island (Canada).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -59,7 +59,7 @@ class PrinceEdwardIsland extends Canada
      * @see https://en.wikipedia.org/wiki/Family_Day_(Canada)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateIslanderDay(): void
@@ -82,7 +82,7 @@ class PrinceEdwardIsland extends Canada
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_Canada#Statutory_holidays
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateGoldCupParadeDay(): void

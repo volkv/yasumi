@@ -16,7 +16,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -37,7 +37,7 @@ class Greece extends AbstractProvider
      * Initialize holidays for Greece.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -77,7 +77,7 @@ class Greece extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Three_Holy_Hierarchs
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateThreeHolyHierarchs(): void
@@ -101,7 +101,7 @@ class Greece extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Clean_Monday
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateCleanMonday(): void
@@ -132,7 +132,7 @@ class Greece extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Greek_War_of_Independence
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateIndependenceDay(): void
@@ -155,7 +155,7 @@ class Greece extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Ohi_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateOhiDay(): void
@@ -178,7 +178,7 @@ class Greece extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Athens_Polytechnic_uprising
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculatePolytechnio(): void

@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Australia\Tasmania\South;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Tasmania\South;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -38,7 +38,7 @@ class Southeast extends South
      * Initialize holidays for southeastern Tasmania (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void

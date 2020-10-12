@@ -15,7 +15,7 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider;
 
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 
@@ -42,7 +42,7 @@ class Ukraine extends AbstractProvider
      * Initialize holidays for Ukraine.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -76,7 +76,7 @@ class Ukraine extends AbstractProvider
      *                               of holidays of this country
      * @param bool    $substitutable holidays on a weekend will be substituted to the next monday
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -115,7 +115,7 @@ class Ukraine extends AbstractProvider
      * Christmas Day.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateChristmasDay(): void
@@ -135,7 +135,7 @@ class Ukraine extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/International_Workers%27_Day#Ukraine
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSecondInternationalWorkersDay(): void
@@ -162,7 +162,7 @@ class Ukraine extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Victory_Day_over_Nazism_in_World_War_II
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateVictoryDay(): void
@@ -183,7 +183,7 @@ class Ukraine extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Constitution_Day_(Ukraine)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateConstitutionDay(): void
@@ -210,7 +210,7 @@ class Ukraine extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Declaration_of_Independence_of_Ukraine
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateIndependenceDay(): void
@@ -238,7 +238,7 @@ class Ukraine extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Defender_of_Ukraine_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateDefenderOfUkraineDay(): void
@@ -262,7 +262,7 @@ class Ukraine extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Christmas_in_Ukraine
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateCatholicChristmasDay(): void

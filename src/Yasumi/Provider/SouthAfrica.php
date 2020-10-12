@@ -17,7 +17,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 
@@ -43,7 +43,7 @@ class SouthAfrica extends AbstractProvider
      * Initialize holidays for South Africa.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -91,7 +91,7 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/about-sa/public-holidays#21march
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateHumanRightsDay(): void
@@ -112,7 +112,7 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/documents/public-holidays-act
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateFamilyDay(): void
@@ -134,7 +134,7 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/freedom-day-2014
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateFreedomDay(): void
@@ -160,7 +160,7 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/youth-day-2014
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateYouthDay(): void
@@ -182,7 +182,7 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/speeches/president-jacob-zuma-declares-3-august-2016-public-holiday-24-jun-2016-0000
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculate2016MunicipalElectionsDay(): void
@@ -210,7 +210,7 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/womens-day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateNationalWomensDay(): void
@@ -234,7 +234,7 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/heritage-day-2014
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateHeritageDay(): void
@@ -260,7 +260,7 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/day-reconciliation-2014
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateDayOfReconciliation(): void
@@ -285,7 +285,7 @@ class SouthAfrica extends AbstractProvider
      * @see https://www.gov.za/documents/public-holidays-act
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSubstituteDayOfGoodwill(): void
@@ -309,7 +309,7 @@ class SouthAfrica extends AbstractProvider
      * following on it shall be a public holiday.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSubstituteHolidays(): void

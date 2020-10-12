@@ -16,7 +16,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -37,7 +37,7 @@ class Denmark extends AbstractProvider
      * Initialize holidays for Denmark.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -86,7 +86,7 @@ class Denmark extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Store_Bededag
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateGreatPrayerDay(): void
@@ -115,7 +115,7 @@ class Denmark extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Constitution_Day_(Denmark)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateConstitutionDay(): void

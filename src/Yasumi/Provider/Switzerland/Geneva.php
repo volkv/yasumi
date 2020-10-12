@@ -16,7 +16,7 @@ namespace Yasumi\Provider\Switzerland;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -43,7 +43,7 @@ class Geneva extends Switzerland
      * Initialize holidays for Geneva (Switzerland).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -70,7 +70,7 @@ class Geneva extends Switzerland
      * @see https://en.wikipedia.org/wiki/Je%C3%BBne_genevois
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateJeuneGenevois(): void
@@ -105,7 +105,7 @@ class Geneva extends Switzerland
      * @see https://fr.wikipedia.org/wiki/Restauration_genevoise
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateRestaurationGenevoise(): void

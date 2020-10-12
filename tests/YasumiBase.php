@@ -24,7 +24,7 @@ use InvalidArgumentException;
 use PHPUnit\Framework\AssertionFailedError;
 use ReflectionException;
 use RuntimeException;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Filters\BankHolidays;
 use Yasumi\Filters\ObservedHolidays;
 use Yasumi\Filters\OfficialHolidays;
@@ -53,7 +53,7 @@ trait YasumiBase
      *
      * @throws InvalidArgumentException
      * @throws RuntimeException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws ReflectionException
      */
     public function assertDefinedHolidays(
@@ -96,7 +96,7 @@ trait YasumiBase
      * @param int      $year     holiday calendar year
      * @param DateTime $expected the date to be checked against
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws AssertionFailedError
@@ -124,7 +124,7 @@ trait YasumiBase
      * @param int      $year     holiday calendar year
      * @param DateTime $expected the date to be checked against
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws AssertionFailedError
@@ -153,7 +153,7 @@ trait YasumiBase
      *
      * @throws InvalidArgumentException
      * @throws RuntimeException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws AssertionFailedError
      * @throws ReflectionException
      */
@@ -178,7 +178,7 @@ trait YasumiBase
      *
      * @throws InvalidArgumentException
      * @throws RuntimeException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws AssertionFailedError
      * @throws ReflectionException
      */
@@ -203,7 +203,7 @@ trait YasumiBase
      *
      * @throws InvalidArgumentException
      * @throws RuntimeException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws AssertionFailedError
      * @throws ReflectionException
      */
@@ -252,7 +252,7 @@ trait YasumiBase
      * @throws InvalidArgumentException
      * @throws RuntimeException
      * @throws AssertionFailedError
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws ReflectionException
      */
     public function assertHolidayType(
@@ -280,7 +280,7 @@ trait YasumiBase
      * @throws AssertionFailedError
      * @throws InvalidArgumentException
      * @throws RuntimeException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws ReflectionException
      */
     public function assertDayOfWeek(

@@ -16,7 +16,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 
@@ -38,7 +38,7 @@ class USA extends AbstractProvider
      * Initialize holidays for the USA.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -262,7 +262,7 @@ class USA extends AbstractProvider
      * When one of these holidays fall on a Sunday, the next day is also a holiday.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSubstituteHolidays(): void

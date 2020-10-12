@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -36,7 +36,7 @@ class Poland extends AbstractProvider
      * Initialize holidays for Poland.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -74,7 +74,7 @@ class Poland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/May_3rd_Constitution_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateIndependenceDay(): void
@@ -100,7 +100,7 @@ class Poland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/National_Independence_Day_(Poland)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateConstitutionDay(): void

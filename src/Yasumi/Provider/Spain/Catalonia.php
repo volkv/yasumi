@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -47,7 +47,7 @@ class Catalonia extends Spain
      * Initialize holidays for Catalonia (Spain).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -74,7 +74,7 @@ class Catalonia extends Spain
      * @see https://en.wikipedia.org/wiki/National_Day_of_Catalonia
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateNationalDayOfCatalonia(): void

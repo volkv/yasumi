@@ -16,7 +16,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -37,7 +37,7 @@ class Canada extends AbstractProvider
      * Initialize holidays for Canada.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -66,7 +66,7 @@ class Canada extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Family_Day_(Canada)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateFamilyDay(): void
@@ -89,7 +89,7 @@ class Canada extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Victoria_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateVictoriaDay(): void
@@ -112,7 +112,7 @@ class Canada extends AbstractProvider
      * @see https://www.rcaanc-cirnac.gc.ca/eng/1100100013248/1534872397533
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateNationalIndigenousPeoplesDay(): void
@@ -135,7 +135,7 @@ class Canada extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Canada_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateCanadaDay(): void
@@ -158,7 +158,7 @@ class Canada extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Civic_Holiday
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateCivicHoliday(): void
@@ -181,7 +181,7 @@ class Canada extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Thanksgiving_(Canada)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateThanksgivingDay(): void
@@ -204,7 +204,7 @@ class Canada extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Remembrance_Day_(Canada)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     protected function calculateRemembranceDay(): void
@@ -227,7 +227,7 @@ class Canada extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Labour_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateLabourDay(): void

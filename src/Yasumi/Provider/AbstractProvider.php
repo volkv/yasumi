@@ -18,7 +18,7 @@ use ArrayIterator;
 use Countable;
 use InvalidArgumentException;
 use IteratorAggregate;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Filters\Between;
 use Yasumi\Filters\On;
 use Yasumi\Holiday;
@@ -317,7 +317,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @return Holiday|null a Holiday instance for the given holiday
      *
      * @throws \ReflectionException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \RuntimeException
      * @throws InvalidArgumentException
      *
@@ -354,7 +354,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      * @return Holiday|null a Holiday instance for the given holiday
      *
      * @throws \ReflectionException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \RuntimeException
      * @throws InvalidArgumentException
      *
@@ -494,7 +494,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *
      * @throws \ReflectionException
      * @throws InvalidArgumentException when the given name is blank or empty
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \RuntimeException
      */
     private function anotherTime(int $year, string $key): ?Holiday

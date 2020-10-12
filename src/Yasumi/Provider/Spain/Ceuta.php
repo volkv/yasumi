@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -44,7 +44,7 @@ class Ceuta extends Spain
      * Initialize holidays for Ceuta (Spain).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -68,7 +68,7 @@ class Ceuta extends Spain
      * @see https://www.timeanddate.com/holidays/spain/the-independent-city-ceuta-day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateDayOfCeuta(): void

@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -45,7 +45,7 @@ class Cantabria extends Spain
      * Initialize holidays for Cantabria (Spain).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -74,7 +74,7 @@ class Cantabria extends Spain
      * @see https://www.timeanddate.com/holidays/spain/cantabria-day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateCantabriaDay(): void

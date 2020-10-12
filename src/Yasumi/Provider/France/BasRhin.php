@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Yasumi\Provider\France;
 
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Provider\ChristianHolidays;
 use Yasumi\Provider\France;
 
@@ -41,7 +41,7 @@ class BasRhin extends France
      * Initialize holidays for Bas-Rhin (France).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void

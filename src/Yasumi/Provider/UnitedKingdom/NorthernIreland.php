@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\UnitedKingdom;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\UnitedKingdom;
@@ -42,7 +42,7 @@ class NorthernIreland extends UnitedKingdom
      * Initialize holidays for Northern Ireland (United Kingdom).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -65,7 +65,7 @@ class NorthernIreland extends UnitedKingdom
      * @see https://en.wikipedia.org/wiki/Saint_Patrick%27s_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateStPatricksDay(): void
@@ -109,7 +109,7 @@ class NorthernIreland extends UnitedKingdom
      * @see https://en.wikipedia.org/wiki/The_Twelfth
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateBattleOfTheBoyne(): void

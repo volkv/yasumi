@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -38,7 +38,7 @@ class Portugal extends AbstractProvider
      * Initialize holidays for Portugal.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -77,7 +77,7 @@ class Portugal extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Carnation_Revolution
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateCarnationRevolutionDay(): void
@@ -98,7 +98,7 @@ class Portugal extends AbstractProvider
      * It was restored in 2016.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateCorpusChristi(): void
@@ -122,7 +122,7 @@ class Portugal extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Portugal_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculatePortugalDay(): void
@@ -155,7 +155,7 @@ class Portugal extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/5_October_1910_revolution
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculatePortugueseRepublicDay(): void
@@ -175,7 +175,7 @@ class Portugal extends AbstractProvider
      * It was restored in 2016.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateAllSaintsDay(): void
@@ -208,7 +208,7 @@ class Portugal extends AbstractProvider
      * @see https://pt.wikipedia.org/wiki/Guerra_da_Restauração (english link)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateRestorationOfIndependenceDay(): void

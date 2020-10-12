@@ -16,7 +16,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 
@@ -40,7 +40,7 @@ class Australia extends AbstractProvider
      * Initialize holidays for Australia.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -67,7 +67,7 @@ class Australia extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/australia/new-year-day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateNewYearHolidays(): void
@@ -119,7 +119,7 @@ class Australia extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/australia/australia-day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateAustraliaDay(): void
@@ -162,7 +162,7 @@ class Australia extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/australia/anzac-day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateAnzacDay(): void
@@ -206,7 +206,7 @@ class Australia extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/australia/christmas-day-holiday
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateChristmasDay(): void

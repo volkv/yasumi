@@ -18,7 +18,7 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use DateTimeInterface;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 
@@ -74,7 +74,7 @@ class Japan extends AbstractProvider
      * Initialize holidays for Japan.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -261,7 +261,7 @@ class Japan extends AbstractProvider
      * @see http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateVernalEquinoxDay(): void
@@ -296,7 +296,7 @@ class Japan extends AbstractProvider
      * of January.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      * @throws \Exception
      */
@@ -325,7 +325,7 @@ class Japan extends AbstractProvider
      * Greenery Day was established from 1989 on April 29th. After 2007 it was changed to be May 4th.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateGreeneryDay(): void
@@ -354,7 +354,7 @@ class Japan extends AbstractProvider
      * 2020 is July 23th.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateMarineDay(): void
@@ -384,7 +384,7 @@ class Japan extends AbstractProvider
      * Mountain Day. Mountain Day is held on August 11th and established since 2016.In 2020 is August 10th.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      * @throws \Exception
      */
@@ -414,7 +414,7 @@ class Japan extends AbstractProvider
      * monday of September.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateRespectForTheAgeDay(): void
@@ -443,7 +443,7 @@ class Japan extends AbstractProvider
      * monday of October.In 2020 is July 24th.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSportsDay(): void
@@ -482,7 +482,7 @@ class Japan extends AbstractProvider
      * @see http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateAutumnalEquinoxDay(): void
@@ -517,7 +517,7 @@ class Japan extends AbstractProvider
      * another holiday).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSubstituteHolidays(): void
@@ -601,7 +601,7 @@ class Japan extends AbstractProvider
      * Any day that falls between two other national holidays also becomes a holiday, known as a bridge holiday.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateBridgeHolidays(): void

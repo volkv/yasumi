@@ -20,9 +20,9 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use ReflectionClass;
 use RuntimeException;
-use Yasumi\Exception\InvalidYearException;
-use Yasumi\Exception\ProviderNotFoundException;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\InvalidYear;
+use Yasumi\Exception\ProviderNotFound;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Provider\AbstractProvider;
 use Yasumi\Provider\ProviderInterface;
 use Yasumi\Translation\Translations;
@@ -72,7 +72,7 @@ class Yasumi
      * @param int                $workingDays Number of days to look ahead for the (first) next working day
      *
      * @throws \ReflectionException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws RuntimeException
      * @throws InvalidArgumentException
      * @throws \Exception
@@ -116,10 +116,10 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      *
-     * @throws RuntimeException          If no such holiday provider is found
-     * @throws InvalidYearException      if the year parameter is not between 1000 and 9999
-     * @throws UnknownLocaleException    if the locale parameter is invalid
-     * @throws ProviderNotFoundException if the holiday provider for the given country does not exist
+     * @throws RuntimeException     If no such holiday provider is found
+     * @throws InvalidYear          if the year parameter is not between 1000 and 9999
+     * @throws UnknownLocale        if the locale parameter is invalid
+     * @throws ProviderNotFound     if the holiday provider for the given country does not exist
      * @throws \ReflectionException
      */
     public static function create(string $class, int $year = 0, string $locale = self::DEFAULT_LOCALE): AbstractProvider
@@ -132,12 +132,12 @@ class Yasumi
         }
 
         if ('AbstractProvider' === $class || !\class_exists($providerClass)) {
-            throw new ProviderNotFoundException(\sprintf('Unable to find holiday provider "%s".', $class));
+            throw new ProviderNotFound(\sprintf('Unable to find holiday provider "%s".', $class));
         }
 
         // Assert year input
         if ($year < 1000 || $year > 9999) {
-            throw new InvalidYearException(\sprintf('Year needs to be between 1000 and 9999 (%d given).', $year));
+            throw new InvalidYear(\sprintf('Year needs to be between 1000 and 9999 (%d given).', $year));
         }
 
         // Load internal locales variable
@@ -153,7 +153,7 @@ class Yasumi
 
         // Assert locale input
         if (!\in_array($locale, self::$locales, true)) {
-            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
+            throw new UnknownLocale(\sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
         return new $providerClass($year, $locale, self::$globalTranslations);
@@ -183,10 +183,10 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      *
-     * @throws RuntimeException          If no such holiday provider is found
-     * @throws InvalidArgumentException  if the year parameter is not between 1000 and 9999
-     * @throws UnknownLocaleException    if the locale parameter is invalid
-     * @throws ProviderNotFoundException if the holiday provider for the given ISO3166-2 code does not exist
+     * @throws RuntimeException         If no such holiday provider is found
+     * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
+     * @throws UnknownLocale            if the locale parameter is invalid
+     * @throws ProviderNotFound         if the holiday provider for the given ISO3166-2 code does not exist
      * @throws \ReflectionException
      */
     public static function createByISO3166_2(
@@ -197,7 +197,7 @@ class Yasumi
         $availableProviders = self::getProviders();
 
         if (false === isset($availableProviders[$isoCode])) {
-            throw new ProviderNotFoundException(\sprintf('Unable to find holiday provider by ISO3166-2 "%s".', $isoCode));
+            throw new ProviderNotFound(\sprintf('Unable to find holiday provider by ISO3166-2 "%s".', $isoCode));
         }
 
         return self::create($availableProviders[$isoCode], $year, $locale);
@@ -259,7 +259,7 @@ class Yasumi
      * @param int                $workingDays Number of days to look back for the (first) previous working day
      *
      * @throws \ReflectionException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws RuntimeException
      * @throws InvalidArgumentException
      * @throws \Exception

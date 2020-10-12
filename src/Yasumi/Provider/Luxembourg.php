@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -28,7 +28,7 @@ class Luxembourg extends AbstractProvider
      * Initialize holidays for Luxembourg.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -61,7 +61,7 @@ class Luxembourg extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Europe_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function calculateEuropeDay(): void
@@ -86,7 +86,7 @@ class Luxembourg extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Grand_Duke%27s_Official_Birthday
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function calculateNationalDay(): void

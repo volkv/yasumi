@@ -17,10 +17,8 @@ namespace Yasumi\Exception;
 use InvalidArgumentException;
 
 /**
- * Class InvalidYearException.
- *
- * @author Quentin Neyrat <quentin.neyrat@gmail.com>
+ * Class UnknownLocaleException.
  */
-class InvalidYearException extends InvalidArgumentException implements Exception
+class UnknownLocale extends InvalidArgumentException implements Exception
 {
 }

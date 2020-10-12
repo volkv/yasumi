@@ -16,7 +16,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -37,7 +37,7 @@ class Sweden extends AbstractProvider
      * Initialize holidays for Sweden.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -80,7 +80,7 @@ class Sweden extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Twelfth_Night_(holiday)
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -106,7 +106,7 @@ class Sweden extends AbstractProvider
      *
      * @see https://en.wikipedia.org/wiki/Walpurgis_Night
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -136,7 +136,7 @@ class Sweden extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Midsummer#Sweden
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateStJohnsHolidays(): void
@@ -176,7 +176,7 @@ class Sweden extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/sweden/all-saints-day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateAllSaintsHolidays(): void
@@ -209,7 +209,7 @@ class Sweden extends AbstractProvider
      * modern Sweden.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateNationalDay(): void

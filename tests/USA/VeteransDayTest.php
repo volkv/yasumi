@@ -18,7 +18,7 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use ReflectionException;
-use Yasumi\Exception\MissingTranslationException;
+use Yasumi\Exception\MissingTranslation;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiTestCaseInterface;
 use Yasumi\Yasumi;
@@ -107,7 +107,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * Tests name of Veterans Day before 1954. Veterans Day was named 'Armistice Day' before 1954.
      *
      * @throws ReflectionException
-     * @throws MissingTranslationException
+     * @throws MissingTranslation
      */
     public function testVeteransDayNameBefore1954(): void
     {
@@ -122,7 +122,7 @@ class VeteransDayTest extends USABaseTestCase implements YasumiTestCaseInterface
      * Tests name of Veterans Day after 1954. Veterans Day was named 'Armistice Day' before 1954.
      *
      * @throws ReflectionException
-     * @throws MissingTranslationException
+     * @throws MissingTranslation
      */
     public function testVeteransDayNameAfter1954(): void
     {

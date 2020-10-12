@@ -16,7 +16,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -41,7 +41,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -69,7 +69,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -103,7 +103,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -134,7 +134,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -165,7 +165,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -199,7 +199,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a type of 'other' is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -234,7 +234,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default observance is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -266,7 +266,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -298,7 +298,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -333,7 +333,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -361,7 +361,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -393,7 +393,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -429,7 +429,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -457,7 +457,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -492,7 +492,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -528,7 +528,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -564,7 +564,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -593,7 +593,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -628,7 +628,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -658,7 +658,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -688,7 +688,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -754,7 +754,7 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */

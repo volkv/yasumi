@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -40,7 +40,7 @@ class CzechRepublic extends AbstractProvider
      * Initialize holidays for the Czech Republic.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -69,7 +69,7 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateRenewalOfCzechIndependenceDay(): void
@@ -102,7 +102,7 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateSaintsCyrilAndMethodiusDay(): void
@@ -129,7 +129,7 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateJanHusDay(): void
@@ -156,7 +156,7 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateCzechStatehoodDay(): void
@@ -178,7 +178,7 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateIndependentCzechoslovakStateDay(): void
@@ -195,7 +195,7 @@ class CzechRepublic extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateStruggleForFreedomAndDemocracyDay(): void

@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -41,7 +41,7 @@ class Romania extends AbstractProvider
      * Initialize holidays for Romania.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -90,7 +90,7 @@ class Romania extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Public_holidays_in_Romania
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateDayAfterNewYearsDay(): void
@@ -113,7 +113,7 @@ class Romania extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/United_Principalities
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateUnitedPrincipalitiesDay(): void
@@ -135,7 +135,7 @@ class Romania extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/St._Andrew%27s_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateStAndrewDay(): void
@@ -162,7 +162,7 @@ class Romania extends AbstractProvider
      * @see https://ro.wikipedia.org/wiki/Ziua_na%C8%9Bional%C4%83_a_Rom%C3%A2niei
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateNationalDay(): void
@@ -198,7 +198,7 @@ class Romania extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Constantin_Br%C3%A2ncu%C8%99i
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateConstantinBrancusiDay(): void
@@ -226,7 +226,7 @@ class Romania extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Children%27s_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      * @throws \Exception
      */

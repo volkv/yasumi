@@ -17,7 +17,7 @@ namespace Yasumi\tests\Base;
 use InvalidArgumentException;
 use org\bovigo\vfs\vfsStream;
 use PHPUnit\Framework\TestCase;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Translation\Translations;
 
 /**
@@ -116,7 +116,7 @@ class TranslationsTest extends TestCase
      */
     public function testAddTranslationUnknownLocaleException(): void
     {
-        $this->expectException(UnknownLocaleException::class);
+        $this->expectException(UnknownLocale::class);
 
         $translations = new Translations(self::LOCALES);
 
@@ -222,7 +222,7 @@ FILE;
      */
     public function testLoadingTranslationsFromDirectoryWithUnknownLocaleException(): void
     {
-        $this->expectException(UnknownLocaleException::class);
+        $this->expectException(UnknownLocale::class);
 
         $key = 'newYearsDay';
         $fileContents = <<<'FILE'

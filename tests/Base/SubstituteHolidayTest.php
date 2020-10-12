@@ -17,7 +17,7 @@ namespace Yasumi\tests\Base;
 use DateTime;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\SubstituteHoliday;
 use Yasumi\tests\YasumiBase;
@@ -41,7 +41,7 @@ class SubstituteHolidayTest extends TestCase
     {
         $holiday = new Holiday('testHoliday', [], new DateTime());
 
-        $this->expectException(UnknownLocaleException::class);
+        $this->expectException(UnknownLocale::class);
 
         new SubstituteHoliday($holiday, [], new DateTime(), 'wx-YZ');
     }

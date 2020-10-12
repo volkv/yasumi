@@ -17,8 +17,10 @@ namespace Yasumi\Exception;
 use InvalidArgumentException;
 
 /**
- * Class UnknownLocaleException.
+ * Class ProviderNotFoundException.
+ *
+ * @author Quentin Neyrat <quentin.neyrat@gmail.com>
  */
-class UnknownLocaleException extends InvalidArgumentException implements Exception
+class ProviderNotFound extends InvalidArgumentException implements Exception
 {
 }

@@ -21,9 +21,9 @@ use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 use stdClass;
-use Yasumi\Exception\InvalidYearException;
-use Yasumi\Exception\ProviderNotFoundException;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\InvalidYear;
+use Yasumi\Exception\ProviderNotFound;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
@@ -54,7 +54,7 @@ class YasumiTest extends TestCase
      */
     public function testCreateWithInvalidYear(): void
     {
-        $this->expectException(InvalidYearException::class);
+        $this->expectException(InvalidYear::class);
 
         Yasumi::create('Japan', 10100);
     }
@@ -66,7 +66,7 @@ class YasumiTest extends TestCase
      */
     public function testCreateWithInvalidProvider(): void
     {
-        $this->expectException(ProviderNotFoundException::class);
+        $this->expectException(ProviderNotFound::class);
 
         Yasumi::create('Mars');
     }
@@ -117,7 +117,7 @@ class YasumiTest extends TestCase
      */
     public function testCreateWithInvalidLocale(): void
     {
-        $this->expectException(UnknownLocaleException::class);
+        $this->expectException(UnknownLocale::class);
 
         Yasumi::create(
             'Japan',
@@ -587,7 +587,7 @@ class YasumiTest extends TestCase
      */
     public function testCreateByISO3166_2WithInvalidCode(): void
     {
-        $this->expectException(ProviderNotFoundException::class);
+        $this->expectException(ProviderNotFound::class);
 
         Yasumi::createByISO3166_2('XX', 2019);
     }

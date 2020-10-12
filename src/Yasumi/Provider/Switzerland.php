@@ -16,7 +16,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -37,7 +37,7 @@ class Switzerland extends AbstractProvider
      * Initialize holidays for Switzerland.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -57,7 +57,7 @@ class Switzerland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Berchtoldstag
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function calculateBerchtoldsTag(): void
@@ -86,7 +86,7 @@ class Switzerland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Federal_Day_of_Thanksgiving,_Repentance_and_Prayer
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function calculateBettagsMontag(): void
@@ -115,7 +115,7 @@ class Switzerland extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Swiss_National_Day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateNationalDay(): void

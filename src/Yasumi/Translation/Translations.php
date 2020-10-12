@@ -17,7 +17,7 @@ namespace Yasumi\Translation;
 
 use DirectoryIterator;
 use InvalidArgumentException;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 
 /**
  * Class Translations.
@@ -49,7 +49,7 @@ class Translations implements TranslationsInterface
      *
      * @param string $directoryPath directory path for translation files
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws InvalidArgumentException
      */
     public function loadTranslations(string $directoryPath): void
@@ -92,7 +92,7 @@ class Translations implements TranslationsInterface
      * @param string $locale      locale
      * @param string $translation translation
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      */
     public function addTranslation(string $key, string $locale, string $translation): void
     {
@@ -146,13 +146,13 @@ class Translations implements TranslationsInterface
      *
      * @return true upon success, otherwise an UnknownLocaleException is thrown
      *
-     * @throws UnknownLocaleException an UnknownLocaleException is thrown if the given locale is not
-     *                                valid/available
+     * @throws UnknownLocale an UnknownLocaleException is thrown if the given locale is not
+     *                       valid/available
      */
     protected function isValidLocale(string $locale): bool
     {
         if (!\in_array($locale, $this->availableLocales, true)) {
-            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $locale));
+            throw new UnknownLocale(\sprintf('Locale "%s" is not a valid locale.', $locale));
         }
 
         return true;

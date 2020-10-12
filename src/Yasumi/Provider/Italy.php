@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -36,7 +36,7 @@ class Italy extends AbstractProvider
      * Initialize holidays for Italy.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -74,7 +74,7 @@ class Italy extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Liberation_Day_%28Italy%29
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateLiberationDay(): void
@@ -100,7 +100,7 @@ class Italy extends AbstractProvider
      * @see https://en.wikipedia.org/wiki/Festa_della_Repubblica
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateRepublicDay(): void

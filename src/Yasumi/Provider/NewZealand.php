@@ -16,7 +16,7 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 
 /**
@@ -37,7 +37,7 @@ class NewZealand extends AbstractProvider
      * Initialize holidays for New Zealand.
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -69,7 +69,7 @@ class NewZealand extends AbstractProvider
      * @see https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateNewYearHolidays(): void
@@ -108,7 +108,7 @@ class NewZealand extends AbstractProvider
      * @see https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateWaitangiDay(): void
@@ -137,7 +137,7 @@ class NewZealand extends AbstractProvider
      * @see https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateAnzacDay(): void
@@ -169,7 +169,7 @@ class NewZealand extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/new-zealand/queen-birthday
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateQueensBirthday(): void
@@ -201,7 +201,7 @@ class NewZealand extends AbstractProvider
      * @see https://www.timeanddate.com/holidays/new-zealand/labour-day
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateLabourDay(): void
@@ -229,7 +229,7 @@ class NewZealand extends AbstractProvider
      * @see https://www.employment.govt.nz/leave-and-holidays/public-holidays/public-holidays-falling-on-a-weekend/
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculateChristmasHolidays(): void

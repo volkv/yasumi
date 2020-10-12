@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Germany;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\DateTimeZoneFactory;
 use Yasumi\Provider\Germany;
@@ -42,7 +42,7 @@ class Berlin extends Germany
      * Initialize holidays for Berlin (Germany).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -71,7 +71,7 @@ class Berlin extends Germany
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */

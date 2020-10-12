@@ -17,10 +17,10 @@ namespace Yasumi\Exception;
 use InvalidArgumentException;
 
 /**
- * Class ProviderNotFoundException.
+ * Class InvalidYearException.
  *
  * @author Quentin Neyrat <quentin.neyrat@gmail.com>
  */
-class ProviderNotFoundException extends InvalidArgumentException implements Exception
+class InvalidYear extends InvalidArgumentException implements Exception
 {
 }

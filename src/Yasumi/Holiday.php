@@ -18,8 +18,8 @@ namespace Yasumi;
 use DateTime;
 use InvalidArgumentException;
 use JsonSerializable;
-use Yasumi\Exception\MissingTranslationException;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\MissingTranslation;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Translation\TranslationsInterface;
 
 /**
@@ -106,7 +106,7 @@ class Holiday extends DateTime implements JsonSerializable
      *                                          TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an
      *                                          official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws InvalidArgumentException
      * @throws \Exception
      */
@@ -129,7 +129,7 @@ class Holiday extends DateTime implements JsonSerializable
 
         // Assert display locale input
         if (!\in_array($displayLocale, self::$locales, true)) {
-            throw new UnknownLocaleException(\sprintf('Locale "%s" is not a valid locale.', $displayLocale));
+            throw new UnknownLocale(\sprintf('Locale "%s" is not a valid locale.', $displayLocale));
         }
 
         // Set additional attributes
@@ -192,7 +192,7 @@ class Holiday extends DateTime implements JsonSerializable
      *
      * @param array|null $locales The locales to search for translations
      *
-     * @throws MissingTranslationException
+     * @throws MissingTranslation
      *
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_KEY
@@ -209,7 +209,7 @@ class Holiday extends DateTime implements JsonSerializable
             }
         }
 
-        throw new MissingTranslationException($this->shortName, $locales);
+        throw new MissingTranslation($this->shortName, $locales);
     }
 
     /**

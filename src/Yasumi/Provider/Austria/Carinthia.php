@@ -15,7 +15,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Austria;
 
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\Austria;
 
@@ -36,7 +36,7 @@ class Carinthia extends Austria
      * Initialize holidays for Carinthia (Austria).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -59,7 +59,7 @@ class Carinthia extends Austria
      * @see https://en.wikipedia.org/wiki/1920_Carinthian_plebiscite
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculatePlebisciteDay(): void

@@ -19,8 +19,8 @@ use DateTimeImmutable;
 use Exception;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use Yasumi\Exception\MissingTranslationException;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\MissingTranslation;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Translation\TranslationsInterface;
@@ -53,7 +53,7 @@ class HolidayTest extends TestCase
      */
     public function testCreateHolidayUnknownLocaleException(): void
     {
-        $this->expectException(UnknownLocaleException::class);
+        $this->expectException(UnknownLocale::class);
 
         new Holiday('testHoliday', [], new DateTime(), 'wx-YZ');
     }
@@ -163,7 +163,7 @@ class HolidayTest extends TestCase
     /**
      * Tests the getName function of the Holiday object with an explicit list of locales.
      *
-     * @throws MissingTranslationException
+     * @throws MissingTranslation
      * @throws Exception
      */
     public function testHolidayGetNameWithArgument(): void
@@ -193,7 +193,7 @@ class HolidayTest extends TestCase
         $holiday = new Holiday('testHoliday', $translations, new DateTime(), 'ja');
         self::assertEquals('Holiday EN-US', $holiday->getName());
 
-        $this->expectException(MissingTranslationException::class);
+        $this->expectException(MissingTranslation::class);
         $holiday->getName(['it']);
     }
 

@@ -16,7 +16,7 @@ namespace Yasumi\Provider\Australia\Queensland;
 
 use DateInterval;
 use DateTime;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
 use Yasumi\Provider\Australia\Queensland;
 use Yasumi\Provider\DateTimeZoneFactory;
@@ -39,7 +39,7 @@ class Brisbane extends Queensland
      * Initialize holidays for Brisbane (Australia).
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     public function initialize(): void
@@ -63,7 +63,7 @@ class Brisbane extends Queensland
      * @see https://en.wikipedia.org/wiki/Ekka
      *
      * @throws \InvalidArgumentException
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \Exception
      */
     private function calculatePeoplesDay(): void

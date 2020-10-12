@@ -14,8 +14,8 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-use Yasumi\Exception\MissingTranslationException;
-use Yasumi\Exception\UnknownLocaleException;
+use Yasumi\Exception\MissingTranslation;
+use Yasumi\Exception\UnknownLocale;
 use Yasumi\Translation\TranslationsInterface;
 
 /**
@@ -57,7 +57,7 @@ class SubstituteHoliday extends Holiday
      *                                               TYPE_OBSERVANCE, TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default
      *                                               an official holiday is considered.
      *
-     * @throws UnknownLocaleException
+     * @throws UnknownLocale
      * @throws \InvalidArgumentException
      * @throws \Exception
      */
@@ -100,7 +100,7 @@ class SubstituteHoliday extends Holiday
      *
      * @param array|null $locales The locales to search for translations
      *
-     * @throws MissingTranslationException
+     * @throws MissingTranslation
      *
      * @see Holiday::DEFAULT_LOCALE
      * @see Holiday::LOCALE_KEY
