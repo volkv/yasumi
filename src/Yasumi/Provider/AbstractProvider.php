@@ -22,7 +22,6 @@ use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\Between;
 use Yasumi\Filters\On;
 use Yasumi\Holiday;
-use Yasumi\ProviderInterface;
 use Yasumi\SubstituteHoliday;
 use Yasumi\Translation\TranslationsInterface;
 use Yasumi\Yasumi;

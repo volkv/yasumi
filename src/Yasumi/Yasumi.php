@@ -24,6 +24,7 @@ use Yasumi\Exception\InvalidYearException;
 use Yasumi\Exception\ProviderNotFoundException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Provider\AbstractProvider;
+use Yasumi\Provider\ProviderInterface;
 use Yasumi\Translation\Translations;
 
 /**
