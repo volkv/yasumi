@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use Yasumi\Exception\InvalidDate;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -44,7 +43,6 @@ class Andalusia extends Spain
     /**
      * Initialize holidays for Andalusia (Spain).
      *
-     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -70,7 +68,6 @@ class Andalusia extends Spain
      *
      * @see https://en.wikipedia.org/wiki/D%C3%ADa_de_Andaluc%C3%ADa
      *
-     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

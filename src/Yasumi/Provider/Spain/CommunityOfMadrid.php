@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use Yasumi\Exception\InvalidDate;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -46,7 +45,6 @@ class CommunityOfMadrid extends Spain
     /**
      * Initialize holidays for the Community Of Madrid (Spain).
      *
-     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -76,7 +74,6 @@ class CommunityOfMadrid extends Spain
      *
      * @see https://en.wikipedia.org/wiki/Dos_de_Mayo_Uprising
      *
-     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

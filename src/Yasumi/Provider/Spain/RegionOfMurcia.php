@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use Yasumi\Exception\InvalidDate;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -44,7 +43,6 @@ class RegionOfMurcia extends Spain
     /**
      * Initialize holidays for the Region of Murcia (Spain).
      *
-     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -70,7 +68,6 @@ class RegionOfMurcia extends Spain
      *
      * @see https://www.timeanddate.com/holidays/spain/murcia-day
      *
-     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception

@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Spain;
 
 use DateTime;
-use Yasumi\Exception\InvalidDate;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
 use Yasumi\Provider\ChristianHolidays;
@@ -45,7 +44,6 @@ class Extremadura extends Spain
     /**
      * Initialize holidays for Extremadura (Spain).
      *
-     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
@@ -72,7 +70,6 @@ class Extremadura extends Spain
      *
      * @see https://www.timeanddate.com/holidays/spain/extremadura-day
      *
-     * @throws InvalidDate
      * @throws \InvalidArgumentException
      * @throws UnknownLocaleException
      * @throws \Exception
