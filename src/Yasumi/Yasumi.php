@@ -38,7 +38,7 @@ class Yasumi
     public const DEFAULT_LOCALE = 'en_US';
 
     /**
-     * @var \array list of all defined locales
+     * @var array list of all defined locales
      */
     private static $locales = [];
 
@@ -52,7 +52,7 @@ class Yasumi
     /**
      * Provider class to be ignored (Abstract, trait, other).
      *
-     * @var \array
+     * @var array
      */
     private static $ignoredProvider = [
         'AbstractProvider.php',
