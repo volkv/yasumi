@@ -39,6 +39,11 @@ class SubstituteHoliday extends Holiday
     private $substitutedHoliday;
 
     /**
+     * @var Holiday
+     */
+    private $substitutedHoliday;
+
+    /**
      * Creates a new SubstituteHoliday.
      *
      * If a holiday date needs to be defined for a specific timezone, make sure that the date instance
