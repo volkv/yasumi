@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Yasumi\Provider\Canada;
 
 use Yasumi\Exception\UnknownLocale;
-use Yasumi\Holiday;
 use Yasumi\Provider\Canada;
 
 /**

@@ -116,7 +116,7 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      *
-     * @throws RuntimeException     If no such holiday provider is found
+     * @throws \RuntimeException    If no such holiday provider is found
      * @throws InvalidYear          if the year parameter is not between 1000 and 9999
      * @throws UnknownLocale        if the locale parameter is invalid
      * @throws ProviderNotFound     if the holiday provider for the given country does not exist
@@ -183,10 +183,10 @@ class Yasumi
      *
      * @return AbstractProvider An instance of class $class is created and returned
      *
-     * @throws RuntimeException         If no such holiday provider is found
-     * @throws InvalidArgumentException if the year parameter is not between 1000 and 9999
-     * @throws UnknownLocale            if the locale parameter is invalid
-     * @throws ProviderNotFound         if the holiday provider for the given ISO3166-2 code does not exist
+     * @throws \RuntimeException    If no such holiday provider is found
+     * @throws InvalidYear          if the year parameter is not between 1000 and 9999
+     * @throws UnknownLocale        if the locale parameter is invalid
+     * @throws ProviderNotFound     if the holiday provider for the given ISO3166-2 code does not exist
      * @throws \ReflectionException
      */
     public static function createByISO3166_2(

@@ -75,6 +75,9 @@ class Romania extends AbstractProvider
     }
 
     /**
+     * @param int    $year     the year for which to calculate Easter
+     * @param string $timezone the desired timezone for which to calculate Easter
+     *
      * @throws \Exception
      */
     public function calculateEaster(int $year, string $timezone): DateTime
