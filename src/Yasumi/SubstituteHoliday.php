@@ -29,17 +29,14 @@ use Yasumi\Translation\TranslationsInterface;
 class SubstituteHoliday extends Holiday
 {
     /**
-     * @var Holiday
-     *
-     * @deprecated public access to this property is deprecated in favor of getSubstitutedHoliday()
-     * @see getSubstitutedHoliday()
-     */
-    public $substitutedHoliday;
-
-    /**
      * @var array list of translations of the "{0} observed" pattern
      */
     public $substituteHolidayTranslations;
+
+    /**
+     * @var Holiday
+     */
+    private $substitutedHoliday;
 
     /**
      * Creates a new SubstituteHoliday.
@@ -110,8 +107,8 @@ class SubstituteHoliday extends Holiday
         $name = parent::getName();
 
         if ($name === $this->getKey()) {
-            foreach ($this->getLocales($locales) as $locales) {
-                $pattern = $this->substituteHolidayTranslations[$locales] ?? null;
+            foreach ($this->getLocales($locales) as $localeList) {
+                $pattern = $this->substituteHolidayTranslations[$localeList] ?? null;
                 if ($pattern) {
                     return \str_replace('{0}', $this->substitutedHoliday->getName(), $pattern);
                 }

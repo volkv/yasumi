@@ -15,9 +15,6 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-use DateTime;
-use InvalidArgumentException;
-use JsonSerializable;
 use Yasumi\Exception\MissingTranslation;
 use Yasumi\Exception\UnknownLocale;
 use Yasumi\Translation\TranslationsInterface;
@@ -25,7 +22,7 @@ use Yasumi\Translation\TranslationsInterface;
 /**
  * Class Holiday.
  */
-class Holiday extends DateTime implements JsonSerializable
+class Holiday extends \DateTime implements \JsonSerializable
 {
     /**
      * Type definition for Official (i.e. National/Federal) holidays.
@@ -63,14 +60,6 @@ class Holiday extends DateTime implements JsonSerializable
     public const LOCALE_KEY = '_key';
 
     /**
-     * @var string holiday key
-     *
-     * @deprecated Public access to this property is deprecated in favor of getKey()
-     * @see getKey()
-     */
-    public $shortName;
-
-    /**
      * @var array list of translations of this holiday
      */
     public $translations;
@@ -84,6 +73,11 @@ class Holiday extends DateTime implements JsonSerializable
      * @var string Locale (i.e. language) in which the holiday information needs to be displayed in. (Default 'en_US')
      */
     protected $displayLocale;
+
+    /**
+     * @var string holiday key
+     */
+    private $key;
 
     /**
      * @var array list of all defined locales
@@ -107,7 +101,7 @@ class Holiday extends DateTime implements JsonSerializable
      *                                          official holiday is considered.
      *
      * @throws UnknownLocale
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * @throws \Exception
      */
     public function __construct(
@@ -119,7 +113,7 @@ class Holiday extends DateTime implements JsonSerializable
     ) {
         // Validate if key is not empty
         if (empty($key)) {
-            throw new InvalidArgumentException('Holiday name can not be blank.');
+            throw new \InvalidArgumentException('Holiday name can not be blank.');
         }
 
         // Load internal locales variable
@@ -133,7 +127,7 @@ class Holiday extends DateTime implements JsonSerializable
         }
 
         // Set additional attributes
-        $this->shortName = $key;
+        $this->key = $key;
         $this->translations = $names;
         $this->displayLocale = $displayLocale;
         $this->type = $type;
@@ -159,7 +153,7 @@ class Holiday extends DateTime implements JsonSerializable
      */
     public function getKey(): string
     {
-        return $this->shortName;
+        return $this->key;
     }
 
     /**
@@ -202,14 +196,14 @@ class Holiday extends DateTime implements JsonSerializable
         $locales = $this->getLocales($locales);
         foreach ($locales as $locale) {
             if (self::LOCALE_KEY === $locale) {
-                return $this->shortName;
+                return $this->key;
             }
             if (isset($this->translations[$locale])) {
                 return $this->translations[$locale];
             }
         }
 
-        throw new MissingTranslation($this->shortName, $locales);
+        throw new MissingTranslation($this->key, $locales);
     }
 
     /**
@@ -219,7 +213,7 @@ class Holiday extends DateTime implements JsonSerializable
      */
     public function mergeGlobalTranslations(TranslationsInterface $globalTranslations): void
     {
-        $holidayGlobalTranslations = $globalTranslations->getTranslations($this->shortName);
+        $holidayGlobalTranslations = $globalTranslations->getTranslations($this->key);
         $this->translations = \array_merge($holidayGlobalTranslations, $this->translations);
     }
 

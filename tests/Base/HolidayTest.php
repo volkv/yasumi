@@ -66,12 +66,11 @@ class HolidayTest extends TestCase
     public function testHolidayIsJsonSerializable(): void
     {
         $holiday = new Holiday('testHoliday', [], new DateTime(), 'en_US');
-        $json = \json_encode($holiday);
-        $instance = \json_decode($json, true);
+        $json = \json_encode($holiday, JSON_THROW_ON_ERROR);
+        $instance = \json_decode($json, true, 512, JSON_THROW_ON_ERROR);
 
         self::assertIsArray($instance);
-        self::assertNotNull($instance);
-        self::assertArrayHasKey('shortName', $instance);
+        self::assertArrayHasKey('date', $instance);
     }
 
     /**
