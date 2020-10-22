@@ -25,6 +25,7 @@ declare(strict_types=1);
 namespace Yasumi\Provider;
 
 use Yasumi\Holiday;
+use Yasumi\HolidayInterface;
 
 /**
  * Interface ProviderInterface - Holiday provider interface.
@@ -39,7 +40,7 @@ interface ProviderInterface
 
     //public function removeAll();
 
-    public function add(Holiday ...$holidays): void;
+    public function add(HolidayInterface ...$holidays): void;
 
     /**
      * Returns all of the holidays defined by this holiday provider (for the given year).

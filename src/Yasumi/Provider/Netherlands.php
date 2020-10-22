@@ -18,6 +18,7 @@ use DateInterval;
 use DateTime;
 use Yasumi\Exception\UnknownLocale;
 use Yasumi\Holiday;
+use Yasumi\Provider\Netherlands\Kingsday;
 
 /**
  * Provider for all holidays in the Netherlands.
@@ -85,6 +86,9 @@ class Netherlands extends AbstractProvider
         $this->calculateQueensday();
         $this->calculateKingsday();
         $this->calculateCommemorationLiberationDay();
+
+        // New way
+        $this->add(new Kingsday($this->year));
     }
 
     /**
