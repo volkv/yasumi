@@ -136,7 +136,7 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
         \uasort($this->holidays, [__CLASS__, 'compareDates']);
     }
 
-    public function add(HolidayInterface    ...$holidays): void
+    public function add(HolidayInterface ...$holidays): void
     {
         // TODO: check how to implement merging the global translations
 

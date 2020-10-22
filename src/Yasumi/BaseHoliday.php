@@ -1,7 +1,8 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Yasumi;
-
 
 abstract class BaseHoliday extends \DateTime implements HolidayInterface
 {
