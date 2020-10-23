@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Yasumi;
 
-abstract class BaseHoliday extends \DateTime implements HolidayInterface
+abstract class BaseHoliday extends \DateTimeImmutable implements HolidayInterface
 {
     public function __construct($time = 'now', $timezone = null)
     {

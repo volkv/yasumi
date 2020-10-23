@@ -88,7 +88,9 @@ class Netherlands extends AbstractProvider
         $this->calculateCommemorationLiberationDay();
 
         // New way
-        $this->add(new Kingsday($this->year));
+        if (Kingsday::ESTABLISHMENT_YEAR <= $this->year) {
+            $this->add(new Kingsday($this->year, $this->timezone));
+        }
     }
 
     /**
