@@ -47,13 +47,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Yasumi\\": "src/Yasumi/",
-      "spec\\Yasumi\\": "spec\\Yasumi"
+      "Yasumi\\": "src/Yasumi/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Yasumi\\tests\\": "tests/"
+      "Yasumi\\tests\\": "tests/",
+      "spec\\Yasumi\\": "spec\\Yasumi"
     }
   },
   "scripts": {
