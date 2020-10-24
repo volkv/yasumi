@@ -15,7 +15,7 @@ class LiberationDay extends BaseHoliday
     {
         $date = new \DateTime("$year-5-5", DateTimeZoneFactory::getDateTimeZone($timezone));
 
-        parent::__construct($date->format('Y-m-d'), $date->getTimezone());
+        parent::__construct($date->format(self::DATE_FORMAT), $date->getTimezone());
     }
 
     public function getKey(): string

@@ -7,29 +7,24 @@ namespace Yasumi\Provider\Netherlands;
 use Yasumi\BaseHoliday;
 use Yasumi\Provider\DateTimeZoneFactory;
 
-class Kingsday extends BaseHoliday
+class CommemorationDay extends BaseHoliday
 {
-    public const ESTABLISHMENT_YEAR = 2014;
+    public const ESTABLISHMENT_YEAR = 1947;
 
     public function __construct(int $year, string $timezone)
     {
-        $date = new \DateTime("$year-4-27", DateTimeZoneFactory::getDateTimeZone($timezone));
-
-        // Should this not be a SubstituteHoliday instance instead?
-        if (0 === (int) $date->format('w')) {
-            $date->sub(new \DateInterval('P1D'));
-        }
+        $date = new \DateTime("$year-5-4", DateTimeZoneFactory::getDateTimeZone($timezone));
 
         parent::__construct($date->format(self::DATE_FORMAT), $date->getTimezone());
     }
 
     public function getKey(): string
     {
-        return 'kingsDayNew';
+        return 'commemorationDay';
     }
 
     public function isWorkingDay(): bool
     {
-        return false;
+        return true;
     }
 }
