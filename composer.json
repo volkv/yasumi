@@ -47,7 +47,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Yasumi\\": "src/Yasumi/"
+      "Yasumi\\": "src/Yasumi/",
+      "spec\\Yasumi\\": "spec\\Yasumi"
     }
   },
   "autoload-dev": {
@@ -57,7 +58,8 @@
   },
   "scripts": {
     "format": "./vendor/bin/php-cs-fixer fix .",
-    "test": "vendor/bin/phpunit"
+    "test": "vendor/bin/phpunit",
+    "spec": "vendor/bin/phpspec run"
   },
   "config": {
     "sort-packages": true

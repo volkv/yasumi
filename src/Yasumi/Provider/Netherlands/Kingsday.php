@@ -11,22 +11,16 @@ class Kingsday extends BaseHoliday
 {
     public const ESTABLISHMENT_YEAR = 2014;
 
-    /**
-     * @var int
-     */
-    private $year;
-
     public function __construct(int $year, string $timezone)
     {
-        $this->year = $year;
+        $date = new \DateTime("$year-4-27", DateTimeZoneFactory::getDateTimeZone($timezone));
 
-        $date = new \DateTime("$this->year-4-27", DateTimeZoneFactory::getDateTimeZone($timezone));
-
+        // Should this not be a SubstituteHoliday instance instead?
         if (0 === (int) $date->format('w')) {
             $date->sub(new \DateInterval('P1D'));
         }
 
-        parent::__construct($date->format('Y-m-d'), $timezone);
+        parent::__construct($date->format('Y-m-d'), $date->getTimezone());
     }
 
     public function getKey(): string
