@@ -26,9 +26,10 @@ class LiberationDaySpec extends ObjectBehavior
     {
         $this->shouldHaveType(LiberationDay::class);
         $this->shouldImplement(HolidayInterface::class);
+        $this->shouldImplement(\JsonSerializable::class);
     }
 
-    public function it_should_return_holiday_key(): void
+    public function it_should_return_the_key_name(): void
     {
         $this->getKey()->shouldBe('liberationDay');
     }
@@ -41,5 +42,10 @@ class LiberationDaySpec extends ObjectBehavior
     public function it_should_return_correct_holiday_date(): void
     {
         $this->format('Y-m-d')->shouldBe('2020-05-05');
+    }
+
+    public function it_should_return_date_string_when_called_as_string(): void
+    {
+        $this->__toString()->shouldBe('2020-05-05');
     }
 }
