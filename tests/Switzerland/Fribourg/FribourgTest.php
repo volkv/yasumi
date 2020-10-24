@@ -63,6 +63,12 @@ class FribourgTest extends FribourgBaseTestCase
             'ascensionDay',
             'easterMonday',
             'pentecostMonday',
+            'corpusChristi',
+            'assumptionOfMary',
+            'allSaintsDay',
+            'immaculateConception',
+            'berchtoldsTag',
+            'december26th',
         ], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
