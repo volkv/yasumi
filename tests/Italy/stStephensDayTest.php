@@ -40,7 +40,7 @@ class stStephensDayTest extends ItalyBaseTestCase implements YasumiTestCaseInter
      *
      * @throws ReflectionException
      */
-    public function teststStephensDay($year, $expected): void
+    public function teststStephensDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

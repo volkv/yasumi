@@ -43,7 +43,7 @@ class DayAfterNewYearsDayTest extends NewZealandBaseTestCase implements YasumiTe
      * @throws ReflectionException
      * @throws Exception
      */
-    public function testHoliday($year, $expected): void
+    public function testHoliday(int $year, string $expected): void
     {
         $this->assertHoliday(
             self::REGION,

@@ -43,7 +43,7 @@ class StJosephDayTest extends UriBaseTestCase implements YasumiTestCaseInterface
      *
      * @throws ReflectionException
      */
-    public function testStJosephDay($year, $expected): void
+    public function testStJosephDay(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

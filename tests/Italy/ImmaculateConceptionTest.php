@@ -40,7 +40,7 @@ class ImmaculateConceptionTest extends ItalyBaseTestCase implements YasumiTestCa
      *
      * @throws ReflectionException
      */
-    public function testImmaculateConception($year, $expected): void
+    public function testImmaculateConception(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }

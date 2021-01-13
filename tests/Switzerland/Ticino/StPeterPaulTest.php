@@ -40,7 +40,7 @@ class StPeterPaulTest extends TicinoBaseTestCase implements YasumiTestCaseInterf
      *
      * @throws ReflectionException
      */
-    public function testStPeterPaul($year, $expected): void
+    public function testStPeterPaul(int $year, DateTime $expected): void
     {
         $this->assertHoliday(self::REGION, self::HOLIDAY, $year, $expected);
     }
