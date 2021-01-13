@@ -44,8 +44,6 @@ class MidsummerEveDayTest extends LatviaBaseTestCase implements YasumiTestCaseIn
     /**
      * @dataProvider holidayDataProvider
      *
-     * @param int $year
-     *
      * @throws ReflectionException
      */
     public function testHoliday(int $year, DateTime $expected): void

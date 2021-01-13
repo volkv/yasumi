@@ -44,8 +44,6 @@ class StJohnsDayTest extends LithuaniaBaseTestCase implements YasumiTestCaseInte
     /**
      * @dataProvider holidayDataProvider
      *
-     * @param int $year
-     *
      * @throws ReflectionException
      */
     public function testHoliday(int $year, DateTime $expected): void

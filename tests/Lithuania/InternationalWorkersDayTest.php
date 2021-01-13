@@ -44,8 +44,6 @@ class InternationalWorkersDayTest extends LithuaniaBaseTestCase implements Yasum
     /**
      * @dataProvider holidayDataProvider
      *
-     * @param int $year
-     *
      * @throws ReflectionException
      */
     public function testHoliday(int $year, DateTime $expected): void

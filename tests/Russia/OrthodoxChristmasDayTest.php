@@ -44,8 +44,6 @@ class OrthodoxChristmasDayTest extends RussiaBaseTestCase implements YasumiTestC
     /**
      * @dataProvider holidayDataProvider
      *
-     * @param int $year
-     *
      * @throws ReflectionException
      */
     public function testHoliday(int $year, DateTime $expected): void
