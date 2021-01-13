@@ -564,7 +564,7 @@ class YasumiTest extends TestCase
      *
      * @throws ReflectionException
      */
-    public function testCreateByISO3166_2(): void
+    public function testCreateByISO31662(): void
     {
         $year = Factory::create()->numberBetween(
             self::YEAR_LOWER_BOUND,
@@ -585,7 +585,7 @@ class YasumiTest extends TestCase
      *
      * @throws ReflectionException
      */
-    public function testCreateByISO3166_2WithInvalidCode(): void
+    public function testCreateByISO31662WithInvalidCode(): void
     {
         $this->expectException(ProviderNotFound::class);
 

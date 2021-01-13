@@ -59,7 +59,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNationalDayBetween1948_1989(): void
+    public function testNationalDayBetween19481989(): void
     {
         $year = $this->generateRandomYear(1948, 1989);
         $this->assertHoliday(
@@ -76,7 +76,7 @@ class NationalDayTest extends RomaniaBaseTestCase implements YasumiTestCaseInter
      * @throws Exception
      * @throws ReflectionException
      */
-    public function testNationalDayBetween1866_1947(): void
+    public function testNationalDayBetween18661947(): void
     {
         $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR, 1947);
         $this->assertHoliday(

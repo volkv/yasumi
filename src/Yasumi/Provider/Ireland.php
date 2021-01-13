@@ -26,7 +26,7 @@ use Yasumi\SubstituteHoliday;
  * Note: All calculations are based on the schedule published in the Holidays (Employees) Act, 1973 and its amendments
  * thereafter.
  *
- * @link: http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
+ * @see: http://www.irishstatutebook.ie/eli/1973/act/25/schedule/1/enacted/en/html#sched1
  */
 class Ireland extends AbstractProvider
 {

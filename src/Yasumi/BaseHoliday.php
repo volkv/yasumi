@@ -18,7 +18,7 @@ abstract class BaseHoliday extends \DateTimeImmutable implements HolidayInterfac
      *
      * @return string this instance as a string using the set format
      */
-     public function __toString(): string
+    public function __toString(): string
     {
         return $this->format(self::DATE_FORMAT);
     }
