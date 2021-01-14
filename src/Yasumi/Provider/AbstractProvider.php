@@ -23,6 +23,7 @@ use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
 use Yasumi\Holiday;
+use Yasumi\HolidayInterface;
 use Yasumi\ProviderInterface;
 use Yasumi\SubstituteHoliday;
 use Yasumi\TranslationsInterface;
@@ -421,6 +422,13 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
     public function on(\DateTimeInterface $date): OnFilter
     {
         return new OnFilter($this->getIterator(), $date);
+    }
+
+    public function add(HolidayInterface $holiday): void
+    {
+        $this->holidays[$holiday->getKey()] = $holiday;
+
+        \uasort($this->holidays, [__CLASS__, 'compareDates']);
     }
 
     /**
