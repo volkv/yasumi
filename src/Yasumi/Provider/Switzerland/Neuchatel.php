@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +25,9 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Neuchâtel (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Canton_of_Neuch%C3%A2tel
+ * @see https://en.wikipedia.org/wiki/Canton_of_Neuch%C3%A2tel
+ * @see http://rsn.ne.ch/DATA/program/books/RSN2017/20171/htm/94102.htm
+ * @see https://www.ne.ch/themes/travail/Pages/jours-feries.aspx
  */
 class Neuchatel extends Switzerland
 {
@@ -54,21 +58,32 @@ class Neuchatel extends Switzerland
             $this->locale,
             Holiday::TYPE_OTHER
         ));
-        $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
-        $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
 
-        $this->calculateBerchtoldsTag();
         $this->calculateBettagsMontag();
         $this->calculateInstaurationRepublique();
+
+        $newYearsDay = $this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER);
+        $this->addHoliday($newYearsDay);
+        if ('7' === $newYearsDay->format('N')) {
+            // If the New Year's Day is a sunday, the next day is an holiday
+            $this->calculateJanuary2nd();
+        }
+
+        $christmasDay = $this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER);
+        $this->addHoliday($christmasDay);
+        if ('7' === $christmasDay->format('N')) {
+            // If the Christmas Day is a sunday, the next day is an holiday
+            $this->calculateDecember26th();
+        }
     }
 
     /**
-     * Instauration de la République
+     * Instauration de la République.
      *
-     * @link https://www.feiertagskalender.ch/feiertag.php?ft_id=11&geo=3056&hl=fr
+     * @see https://www.feiertagskalender.ch/feiertag.php?ft_id=11&geo=3056&hl=fr
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -83,10 +98,54 @@ class Neuchatel extends Switzerland
                 [
                     'fr' => 'Instauration de la République',
                 ],
-                new DateTime($this->year . '-03-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new DateTime($this->year.'-03-01', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));
         }
+    }
+
+    /**
+     * January 2nd.
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateJanuary2nd(): void
+    {
+        $this->addHoliday(new Holiday(
+            'january2nd',
+            [
+                'en' => 'January 2nd',
+                'fr' => '2 janvier',
+            ],
+            new DateTime($this->year.'-01-02', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OTHER
+        ));
+    }
+
+    /**
+     * December 26th.
+     *
+     * @throws InvalidDateException
+     * @throws \InvalidArgumentException
+     * @throws UnknownLocaleException
+     * @throws \Exception
+     */
+    private function calculateDecember26th(): void
+    {
+        $this->addHoliday(new Holiday(
+            'december26th',
+            [
+                'en' => 'December 26th',
+                'fr' => '26 décembre',
+            ],
+            new DateTime($this->year.'-12-26', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+            $this->locale,
+            Holiday::TYPE_OTHER
+        ));
     }
 }

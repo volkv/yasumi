@@ -1,9 +1,11 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
+declare(strict_types=1);
+
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -226,7 +228,7 @@ class Japan extends AbstractProvider
      * Emperors Birthday.
      * The Emperors Birthday is on April 29rd and celebrated as such since 1949 to 1988.
      * December 23rd and celebrated as such since 1989 to 2018.
-     * February 23rd and celebrated as such since 2020.(Coronation Day of the new Emperor, May 1, 2019)
+     * February 23rd and celebrated as such since 2020.(Coronation Day of the new Emperor, May 1, 2019).
      *
      * @throws \Exception
      */
@@ -258,7 +260,7 @@ class Japan extends AbstractProvider
      * of nature and the love of living things. Prior to 1948, the vernal equinox was an imperial ancestor worship
      * festival called Shunki kōrei-sai (春季皇霊祭).
      *
-     * @link http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
+     * @see http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -367,7 +369,11 @@ class Japan extends AbstractProvider
     private function calculateMarineDay(): void
     {
         $date = null;
-        if (2020 === $this->year) {
+        if (2021 === $this->year) {
+            // For Olympic 2021 Tokyo (after COVID-19)
+            $date = new DateTime("$this->year-7-22", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        } elseif (2020 === $this->year) {
+            // For Olympic 2020 Tokyo
             $date = new DateTime("$this->year-7-23", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         } elseif ($this->year >= 2003) {
             $date = new DateTime("third monday of july $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -386,7 +392,7 @@ class Japan extends AbstractProvider
     }
 
     /**
-     * Calculates MountainDay
+     * Calculates MountainDay.
      *
      * Mountain Day. Mountain Day is held on August 11th and established since 2016.In 2020 is August 10th.
      *
@@ -398,7 +404,11 @@ class Japan extends AbstractProvider
     private function calculateMountainDay(): void
     {
         $date = null;
-        if (2020 === $this->year) {
+        if (2021 === $this->year) {
+            // For Olympic 2021 Tokyo (after COVID-19)
+            $date = new DateTime("$this->year-8-8", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        } elseif (2020 === $this->year) {
+            // For Olympic 2020 Tokyo
             $date = new DateTime("$this->year-8-10", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         } elseif ($this->year >= 2016) {
             $date = new DateTime("$this->year-8-11", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -461,7 +471,11 @@ class Japan extends AbstractProvider
     private function calculateSportsDay(): void
     {
         $date = null;
-        if (2020 === $this->year) {
+        if (2021 === $this->year) {
+            // For Olympic 2021 Tokyo (after COVID-19)
+            $date = new DateTime("$this->year-7-23", DateTimeZoneFactory::getDateTimeZone($this->timezone));
+        } elseif (2020 === $this->year) {
+            // For Olympic 2020 Tokyo
             $date = new DateTime("$this->year-7-24", DateTimeZoneFactory::getDateTimeZone($this->timezone));
         } elseif ($this->year >= 2000) {
             $date = new DateTime("second monday of october $this->year", DateTimeZoneFactory::getDateTimeZone($this->timezone));
@@ -491,7 +505,7 @@ class Japan extends AbstractProvider
      * one's ancestors and remember the dead. Prior to 1948, the autumnal equinox was an imperial ancestor worship
      * festival called Shūki kōrei-sai (秋季皇霊祭).
      *
-     * @link http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
+     * @see http://www.h3.dion.ne.jp/~sakatsu/holiday_topic.htm (in Japanese)
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -640,11 +654,11 @@ class Japan extends AbstractProvider
                 $bridgeDate = clone $previous;
                 $bridgeDate->add(new DateInterval('P1D'));
 
-                $this->addHoliday(new Holiday('bridgeDay' . $counter, [
+                $this->addHoliday(new Holiday('bridgeDay'.$counter, [
                     'en' => 'Bridge Public holiday',
                     'ja' => '国民の休日',
                 ], $bridgeDate, $this->locale));
-                $counter++;
+                ++$counter;
             }
         }
     }

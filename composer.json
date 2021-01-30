@@ -35,15 +35,17 @@
     }
   ],
   "require": {
-    "php": ">=7.2",
+    "php": ">=7.3",
     "ext-json": "*"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.16",
-    "fzaninotto/faker": "^1.9",
     "mikey179/vfsstream": "^1.6",
-    "phpspec/phpspec": "^6.2",
-    "phpunit/phpunit": "^8.5"
+    "phpstan/phpstan": "^0.12.66",
+    "phpunit/phpunit": "^8.5 | ^9.4",
+    "infection/infection": "^0.21.0",
+    "vimeo/psalm": "^4",
+    "phpspec/phpspec": "^6.2"
   },
   "autoload": {
     "psr-4": {
@@ -59,7 +61,14 @@
   "scripts": {
     "format": "./vendor/bin/php-cs-fixer fix .",
     "spec": "vendor/bin/phpspec run",
-    "test": "vendor/bin/phpunit"
+    "test": "vendor/bin/phpunit",
+    "phpstan": "vendor/bin/phpstan --level=5 analyse src tests",
+    "psalm": "vendor/bin/psalm --threads=2",
+    "infection": "vendor/bin/infection run -j 2",
+    "analyse": [
+      "@phpstan",
+      "@psalm"
+    ]
   },
   "config": {
     "sort-packages": true

@@ -2,7 +2,7 @@
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,8 +14,15 @@ $finder = PhpCsFixer\Finder::create()->in(__DIR__);
 
 return PhpCsFixer\Config::create()->setRiskyAllowed(true)->setRules([
         '@PSR2'                             => true,
+        '@Symfony'                          => true,
         'array_syntax'                      => ['syntax' => 'short'],
         'native_function_invocation'        => true,
+        'blank_line_after_opening_tag'      => true,
+        'is_null'                           => true,
+        'modernize_types_casting'           => true,
+        'self_accessor'                     => true,
+        'dir_constant'                      => true,
+        'ordered_class_elements'            => true,
         'ordered_imports'                   => ['sortAlgorithm' => 'alpha'],
         'no_unused_imports'                 => true,
         'single_quote'                      => true,
