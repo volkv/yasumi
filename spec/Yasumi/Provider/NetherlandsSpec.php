@@ -16,6 +16,7 @@ declare(strict_types=1);
 namespace spec\Yasumi\Provider;
 
 use PhpSpec\ObjectBehavior;
+use Yasumi\Holiday;
 use Yasumi\Provider\AbstractProvider;
 use Yasumi\Provider\Netherlands;
 
@@ -60,5 +61,23 @@ class NetherlandsSpec extends ObjectBehavior
     {
         $this->isHoliday(new \DateTimeImmutable('1931-10-04'))->shouldBe(false);
         $this->isHoliday(new \DateTimeImmutable('1911-10-04'))->shouldBe(false);
+    }
+
+    public function it_should_have_st_martins_day(): void
+    {
+        $this->isHoliday(new \DateTimeImmutable('2020-11-11'))->shouldBe(true);
+    }
+
+    public function it_should_have_fathers_day(): void
+    {
+        $key = 'fathersDay';
+
+        $this->getHoliday($key)->shouldBeAnInstanceOf(Holiday::class);
+        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2020-06-21');
+    }
+
+    public function it_should_have_mothers_day(): void
+    {
+        $this->hasHoliday('mothersDay')->shouldBe(true);
     }
 }

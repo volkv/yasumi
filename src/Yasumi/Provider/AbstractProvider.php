@@ -339,11 +339,18 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      */
     public function getHoliday(string $key): ?Holiday
     {
-        $this->isHolidayNameNotEmpty($key); // Validate if key is not empty
+        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
 
         $holidays = $this->getHolidays();
 
         return $holidays[$key] ?? null;
+    }
+
+    public function hasHoliday(string $key): bool
+    {
+        $this->isHolidayKeyNotEmpty($key); // Validate if key is not empty
+
+        return \array_key_exists($key, $this->holidays);
     }
 
     /**
