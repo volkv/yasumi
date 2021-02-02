@@ -20,6 +20,7 @@ use Yasumi\Holiday;
 use Yasumi\Provider\AbstractProvider;
 use Yasumi\Provider\Netherlands;
 use Yasumi\tests\YasumiBase;
+use Yasumi\Yasumi;
 
 class NetherlandsSpec extends ObjectBehavior
 {
@@ -120,14 +121,14 @@ class NetherlandsSpec extends ObjectBehavior
 
     public function it_should_not_have_kingsday_before_2014(): void
     {
-        $this->beConstructedWith(YasumiBase::numberBetween(1000, 2013));
+        $this->beConstructedWith(YasumiBase::numberBetween(Yasumi::YEAR_LOWER_BOUND, 2013));
 
         $this->getHoliday(self::KINGS_DAY)->shouldBeNull();
     }
 
     public function it_should_not_have_queensday_before_1891(): void
     {
-        $this->beConstructedWith(YasumiBase::numberBetween(1000, 1890));
+        $this->beConstructedWith(YasumiBase::numberBetween(Yasumi::YEAR_LOWER_BOUND, 1890));
 
         $this->getHoliday(self::QUEENSDAY)->shouldBeNull();
     }
