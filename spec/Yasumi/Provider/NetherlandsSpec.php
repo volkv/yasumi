@@ -19,9 +19,13 @@ use PhpSpec\ObjectBehavior;
 use Yasumi\Holiday;
 use Yasumi\Provider\AbstractProvider;
 use Yasumi\Provider\Netherlands;
+use Yasumi\tests\YasumiBase;
 
 class NetherlandsSpec extends ObjectBehavior
 {
+    private const KINGS_DAY = 'kingsDay';
+    private const QUEENSDAY = 'kingsDay';
+
     public function let(): void
     {
         $this->beConstructedWith(2020);
@@ -78,6 +82,53 @@ class NetherlandsSpec extends ObjectBehavior
 
     public function it_should_have_mothers_day(): void
     {
-        $this->hasHoliday('mothersDay')->shouldBe(true);
+        $key = 'mothersDay';
+
+        $this->getHoliday($key)->shouldBeAnInstanceOf(Holiday::class);
+        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2020-05-10');
+    }
+
+    public function it_should_have_easter(): void
+    {
+        $key = 'easter';
+
+        $this->getHoliday($key)->shouldBeAnInstanceOf(Holiday::class);
+        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2020-04-12');
+    }
+
+    public function it_should_have_easter_monday(): void
+    {
+        $key = 'easterMonday';
+
+        $this->getHoliday($key)->shouldBeAnInstanceOf(Holiday::class);
+        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2020-04-13');
+    }
+
+    public function it_should_have_kingsday(): void
+    {
+        $this->getHoliday(self::KINGS_DAY)->shouldBeAnInstanceOf(Holiday::class);
+        $this->getHoliday(self::KINGS_DAY)->format('Y-m-d')->shouldBe('2020-04-27');
+    }
+
+    public function it_should_have_kingsday_on_2014(): void
+    {
+        $this->beConstructedWith(2014);
+
+        $this->getHoliday(self::KINGS_DAY)->shouldBeAnInstanceOf(Holiday::class);
+        $this->getHoliday(self::KINGS_DAY)->format('Y-m-d')->shouldBe('2014-04-26');
+    }
+
+    public function it_should_not_have_kingsday_before_2014(): void
+    {
+        $this->beConstructedWith(YasumiBase::numberBetween(1000, 2013));
+
+        $this->getHoliday(self::KINGS_DAY)->shouldBeNull();
+    }
+
+    public function it_should_not_have_queensday_before_1891(): void
+    {
+        $this->beConstructedWith(YasumiBase::numberBetween(1000, 1890));
+
+        $this->getHoliday(self::QUEENSDAY)->shouldBeNull();
     }
 }
