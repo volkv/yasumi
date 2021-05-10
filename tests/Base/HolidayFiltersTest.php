@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -32,7 +34,8 @@ class HolidayFiltersTest extends TestCase
     use YasumiBase;
 
     /**
-     * Tests the Official Holidays filter
+     * Tests the Official Holidays filter.
+     *
      * @throws ReflectionException
      */
     public function testOfficialHolidaysFilter(): void
@@ -41,7 +44,7 @@ class HolidayFiltersTest extends TestCase
         $holidays = Yasumi::create('Ireland', 2018);
 
         $filteredHolidays = new OfficialHolidaysFilter($holidays->getIterator());
-        $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
+        $filteredHolidaysArray = iterator_to_array($filteredHolidays);
 
         // Assert array definitions
         self::assertArrayHasKey('newYearsDay', $filteredHolidaysArray);
@@ -66,7 +69,8 @@ class HolidayFiltersTest extends TestCase
     }
 
     /**
-     * Tests the Observed Holidays filter
+     * Tests the Observed Holidays filter.
+     *
      * @throws ReflectionException
      */
     public function testObservedHolidaysFilter(): void
@@ -75,7 +79,7 @@ class HolidayFiltersTest extends TestCase
         $holidays = Yasumi::create('Ireland', 2018);
 
         $filteredHolidays = new ObservedHolidaysFilter($holidays->getIterator());
-        $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
+        $filteredHolidaysArray = iterator_to_array($filteredHolidays);
 
         // Assert array definitions
         self::assertArrayNotHasKey('newYearsDay', $filteredHolidaysArray);
@@ -100,7 +104,8 @@ class HolidayFiltersTest extends TestCase
     }
 
     /**
-     * Tests Bank Holidays
+     * Tests Bank Holidays.
+     *
      * @throws ReflectionException
      */
     public function testBankHolidaysFilter(): void
@@ -109,7 +114,7 @@ class HolidayFiltersTest extends TestCase
         $holidays = Yasumi::create('Ireland', 2018);
 
         $filteredHolidays = new BankHolidaysFilter($holidays->getIterator());
-        $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
+        $filteredHolidaysArray = iterator_to_array($filteredHolidays);
 
         // Assert array definitions
         self::assertArrayNotHasKey('newYearsDay', $filteredHolidaysArray);
@@ -134,7 +139,8 @@ class HolidayFiltersTest extends TestCase
     }
 
     /**
-     * Tests Seasonal Holidays
+     * Tests Seasonal Holidays.
+     *
      * @throws ReflectionException
      */
     public function testSeasonalHolidaysFilter(): void
@@ -142,7 +148,7 @@ class HolidayFiltersTest extends TestCase
         $holidays = Yasumi::create('Netherlands', 2017);
 
         $filteredHolidays = new SeasonalHolidaysFilter($holidays->getIterator());
-        $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
+        $filteredHolidaysArray = iterator_to_array($filteredHolidays);
 
         // Assert array definitions
         self::assertArrayHasKey('summerTime', $filteredHolidaysArray);
@@ -182,7 +188,8 @@ class HolidayFiltersTest extends TestCase
     }
 
     /**
-     * Tests other type of Holidays
+     * Tests other type of Holidays.
+     *
      * @throws ReflectionException
      */
     public function testOtherHolidaysFilter(): void
@@ -190,7 +197,7 @@ class HolidayFiltersTest extends TestCase
         $holidays = Yasumi::create('Netherlands', 2017);
 
         $filteredHolidays = new OtherHolidaysFilter($holidays->getIterator());
-        $filteredHolidaysArray = \iterator_to_array($filteredHolidays);
+        $filteredHolidaysArray = iterator_to_array($filteredHolidays);
 
         // Assert array definitions
         self::assertArrayHasKey('internationalWorkersDay', $filteredHolidaysArray);

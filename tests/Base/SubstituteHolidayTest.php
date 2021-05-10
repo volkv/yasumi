@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -46,6 +48,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests that an InvalidArgumentException is thrown in case the substitute is on the same date as the substituted.
+     *
      * @throws \Exception
      */
     public function testCreateSubstituteHolidaySameDate(): void
@@ -75,14 +78,15 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests that a Yasumi holiday instance can be serialized to a JSON object.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayIsJsonSerializable(): void
     {
         $holiday = new Holiday('testHoliday', [], new DateTime('2019-01-01'), 'en_US');
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US');
-        $json = \json_encode($substitute);
-        $instance = \json_decode($json, true);
+        $json = json_encode($substitute, JSON_THROW_ON_ERROR);
+        $instance = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
 
         self::assertIsArray($instance);
         self::assertNotNull($instance);
@@ -92,7 +96,8 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests that a Yasumi holiday instance can be created using an object that implements the DateTimeInterface (e.g.
-     * DateTime or DateTimeImmutable)
+     * DateTime or DateTimeImmutable).
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayWithDateTimeInterface(): void
@@ -111,6 +116,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests the getName function of the SubstituteHoliday object with no translations for the name given.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayGetNameWithNoTranslations(): void
@@ -120,11 +126,12 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), 'en_US');
 
         self::assertIsString($substitute->getName());
-        self::assertEquals('substituteHoliday:' . $name, $substitute->getName());
+        self::assertEquals('substituteHoliday:'.$name, $substitute->getName());
     }
 
     /**
      * Tests the getName function of the SubstituteHoliday object when it has a custom translation.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayGetNameWithCustomSubstituteTranslation(): void
@@ -136,9 +143,15 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn([$locale => 'foo']);
-        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([$locale => 'foo']);
-        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn(['en' => 'foo']);
+        $translationsStub
+            ->expects(self::exactly(3))
+            ->method('getTranslations')
+            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
+            ->willReturnOnConsecutiveCalls(
+                [$locale => 'foo'],
+                [$locale => 'foo'],
+                ['en' => 'foo']
+            );
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
@@ -148,6 +161,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests the getName function of the SubstituteHoliday object when substitute holiday pattern uses fallback.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayGetNameWithPatternFallback(): void
@@ -159,9 +173,15 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn(['en' => '{0} obs']);
-        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([]);
-        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn([$locale => $translation]);
+        $translationsStub
+            ->expects(self::exactly(3))
+            ->method('getTranslations')
+            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
+            ->willReturnOnConsecutiveCalls(
+                ['en' => '{0} obs'],
+                [],
+                [$locale => $translation]
+            );
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
@@ -171,6 +191,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests the getName function of the SubstituteHoliday object when it has a global translation.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayGetNameWithGlobalSubstituteTranslation(): void
@@ -182,9 +203,15 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [$locale => $translation], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn([$locale => '{0} observed']);
-        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([$locale => $translation]);
-        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn([$locale => 'foo']);
+        $translationsStub
+            ->expects(self::exactly(3))
+            ->method('getTranslations')
+            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
+            ->willReturnOnConsecutiveCalls(
+                [$locale => '{0} observed'],
+                [$locale => $translation],
+                [$locale => 'foo'],
+            );
 
         $substitute->mergeGlobalTranslations($translationsStub);
 
@@ -194,6 +221,7 @@ class SubstituteHolidayTest extends TestCase
 
     /**
      * Tests the getName function of the SubstituteHoliday object when only the substituted holiday has a translation.
+     *
      * @throws \Exception
      */
     public function testSubstituteHolidayGetNameWithSubstitutedTranslation(): void
@@ -205,9 +233,15 @@ class SubstituteHolidayTest extends TestCase
         $substitute = new SubstituteHoliday($holiday, [], new DateTime('2019-01-02'), $locale);
 
         $translationsStub = $this->getMockBuilder(TranslationsInterface::class)->getMock();
-        $translationsStub->expects(self::at(0))->method('getTranslations')->with(self::equalTo('substituteHoliday'))->willReturn([$locale => '{0} observed']);
-        $translationsStub->expects(self::at(1))->method('getTranslations')->with(self::equalTo('substituteHoliday:testHoliday'))->willReturn([]);
-        $translationsStub->expects(self::at(2))->method('getTranslations')->with(self::equalTo('testHoliday'))->willReturn([$locale => $translation]);
+        $translationsStub
+            ->expects(self::exactly(3))
+            ->method('getTranslations')
+            ->withConsecutive([self::equalTo('substituteHoliday')], [self::equalTo('substituteHoliday:testHoliday')], [self::equalTo('testHoliday')])
+            ->willReturnOnConsecutiveCalls(
+                [$locale => '{0} observed'],
+                [],
+                [$locale => $translation],
+            );
 
         $substitute->mergeGlobalTranslations($translationsStub);
 

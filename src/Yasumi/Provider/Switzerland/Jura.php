@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,7 +25,8 @@ use Yasumi\Provider\Switzerland;
 /**
  * Provider for all holidays in Jura (Switzerland).
  *
- * @link https://en.wikipedia.org/wiki/Canton_of_Jura
+ * @see https://en.wikipedia.org/wiki/Canton_of_Jura
+ * @see https://rsju.jura.ch/fr/viewdocument.html?idn=20105&id=26766
  */
 class Jura extends Switzerland
 {
@@ -60,17 +63,20 @@ class Jura extends Switzerland
         $this->addHoliday($this->newYearsDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->christmasDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->ascensionDay($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->easter($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->easterMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
+        $this->addHoliday($this->pentecost($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
         $this->addHoliday($this->pentecostMonday($this->year, $this->timezone, $this->locale, Holiday::TYPE_OTHER));
 
         $this->calculateBerchtoldsTag();
         $this->calculatePlebisciteJurassien();
+        $this->calculateBettagsMontag();
     }
 
     /**
-     * Plébiscite jurassien
+     * Plébiscite jurassien.
      *
-     * @link https://fr.wikipedia.org/wiki/Pl%C3%A9biscite_jurassien
+     * @see https://fr.wikipedia.org/wiki/Pl%C3%A9biscite_jurassien
      *
      * @throws InvalidDateException
      * @throws \InvalidArgumentException
@@ -85,7 +91,7 @@ class Jura extends Switzerland
                 [
                     'fr' => 'Commémoration du plébiscite jurassien',
                 ],
-                new DateTime($this->year . '-06-23', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                new DateTime($this->year.'-06-23', DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OTHER
             ));

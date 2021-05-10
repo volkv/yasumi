@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
-/**
+<?php
+
+declare(strict_types=1);
+/*
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -47,7 +49,7 @@ class HolidayBetweenFilterTest extends TestCase
             new DateTime('07/25/2016', new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         self::assertArrayHasKey('goodFriday', $betweenHolidays);
         self::assertArrayHasKey('easter', $betweenHolidays);
@@ -102,7 +104,7 @@ class HolidayBetweenFilterTest extends TestCase
             new DateTimeImmutable('07/25/2016', new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         self::assertArrayHasKey('goodFriday', $betweenHolidays);
         self::assertArrayHasKey('easter', $betweenHolidays);
@@ -185,7 +187,7 @@ class HolidayBetweenFilterTest extends TestCase
             false
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         self::assertArrayHasKey('epiphany', $betweenHolidays);
         self::assertArrayHasKey('carnivalDay', $betweenHolidays);
@@ -238,10 +240,10 @@ class HolidayBetweenFilterTest extends TestCase
 
         $between = $holidays->between(
             new DateTime('03/25/2011', new DateTimeZone($timezone)),
-            new DateTime('05/17/' . $year, new DateTimeZone($timezone))
+            new DateTime('05/17/'.$year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         self::assertArrayHasKey('newYearsDay', $betweenHolidays);
         self::assertArrayHasKey('maundyThursday', $betweenHolidays);
@@ -277,11 +279,11 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Italy', $year);
 
         $between = $holidays->between(
-            new DateTime('03/25/' . $year, new DateTimeZone($timezone)),
+            new DateTime('03/25/'.$year, new DateTimeZone($timezone)),
             new DateTime('09/21/2021', new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         self::assertArrayNotHasKey('newYearsDay', $betweenHolidays);
         self::assertArrayNotHasKey('epiphany', $betweenHolidays);
@@ -319,8 +321,8 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('USA', $year);
 
         $holidays->between(
-            new DateTime('12/31/' . $year, new DateTimeZone($timezone)),
-            new DateTime('01/01/' . $year, new DateTimeZone($timezone))
+            new DateTime('12/31/'.$year, new DateTimeZone($timezone)),
+            new DateTime('01/01/'.$year, new DateTimeZone($timezone))
         );
     }
 
@@ -340,11 +342,11 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Ireland', $year);
 
         $between = $holidays->between(
-            new DateTime('01/01/' . $year, new DateTimeZone($timezone)),
-            new DateTime('12/31/' . $year, new DateTimeZone($timezone))
+            new DateTime('01/01/'.$year, new DateTimeZone($timezone)),
+            new DateTime('12/31/'.$year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         // Assert array definitions
         self::assertArrayHasKey('newYearsDay', $betweenHolidays);
@@ -381,11 +383,11 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Ireland', $year);
 
         $between = $holidays->between(
-            new DateTime('01/01/' . $year, new DateTimeZone($timezone)),
-            new DateTime('03/20/' . $year, new DateTimeZone($timezone))
+            new DateTime('01/01/'.$year, new DateTimeZone($timezone)),
+            new DateTime('03/20/'.$year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         // Assert array definitions
         self::assertArrayHasKey('newYearsDay', $betweenHolidays);
@@ -426,11 +428,11 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Ireland', $year);
 
         $between = $holidays->between(
-            new DateTime('01/01/' . $year, new DateTimeZone($timezone)),
-            new DateTime('03/18/' . $year, new DateTimeZone($timezone))
+            new DateTime('01/01/'.$year, new DateTimeZone($timezone)),
+            new DateTime('03/18/'.$year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         // Assert array definitions
         self::assertArrayHasKey('newYearsDay', $betweenHolidays);
@@ -472,11 +474,11 @@ class HolidayBetweenFilterTest extends TestCase
         $holidays = Yasumi::create('Ireland', $year);
 
         $between = $holidays->between(
-            new DateTime('01/01/' . $year, new DateTimeZone($timezone)),
-            new DateTime('03/16/' . $year, new DateTimeZone($timezone))
+            new DateTime('01/01/'.$year, new DateTimeZone($timezone)),
+            new DateTime('03/16/'.$year, new DateTimeZone($timezone))
         );
 
-        $betweenHolidays = \iterator_to_array($between);
+        $betweenHolidays = iterator_to_array($between);
 
         // Assert array definitions
         self::assertArrayHasKey('newYearsDay', $betweenHolidays);
