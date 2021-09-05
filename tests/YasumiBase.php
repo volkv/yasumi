@@ -574,17 +574,19 @@ trait YasumiBase
     }
 
     /**
-     * Returns a random number between $int1 and $int2 (any order).
+     * Returns a random number between two integers (any order).
      *
-     * @param int $int1 default to 0
-     * @param int $int2 defaults to 32 bit max integer, ie 2147483647
+     * @param int $lower lower bound number
+     * @param int $upper upper bound number. defaults to Yasumi's lower year bound (9999)
      *
-     * @example 79907610
+     * @throws Exception
+     *
+     * @example 4388
      */
-    public static function numberBetween($int1 = 0, $int2 = 2147483647): int
+    public static function numberBetween(int $lower, int $upper = Yasumi::YEAR_UPPER_BOUND): int
     {
-        $min = $int1 < $int2 ? $int1 : $int2;
-        $max = $int1 < $int2 ? $int2 : $int1;
+        $min = $lower < $upper ? $lower : $upper;
+        $max = $lower < $upper ? $upper : $lower;
 
         return random_int($min, $max);
     }
