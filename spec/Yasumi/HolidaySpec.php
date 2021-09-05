@@ -18,11 +18,6 @@ class HolidaySpec extends ObjectBehavior
         );
     }
 
-    public function it_is_initializable(): void
-    {
-        $this->shouldHaveType(Holiday::class);
-    }
-
     public function it_implements_json_serializable_interface(): void
     {
         $this->shouldImplement(\JsonSerializable::class);

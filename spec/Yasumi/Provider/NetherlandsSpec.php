@@ -5,7 +5,7 @@ declare(strict_types=1);
 /**
  * This file is part of the Yasumi package.
  *
- * Copyright (c) 2015 - 2020 AzuyaLabs
+ * Copyright (c) 2015 - 2021 AzuyaLabs
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,23 +18,18 @@ namespace spec\Yasumi\Provider;
 use PhpSpec\ObjectBehavior;
 use Yasumi\Holiday;
 use Yasumi\Provider\AbstractProvider;
-use Yasumi\Provider\Netherlands;
 use Yasumi\tests\YasumiBase;
 use Yasumi\Yasumi;
 
 class NetherlandsSpec extends ObjectBehavior
 {
     private const KINGS_DAY = 'kingsDay';
+
     private const QUEENSDAY = 'kingsDay';
 
     public function let(): void
     {
-        $this->beConstructedWith(2020);
-    }
-
-    public function it_is_initializable(): void
-    {
-        $this->shouldHaveType(Netherlands::class);
+        $this->beConstructedWith(2021);
     }
 
     public function it_extends_abstract_provider(): void
@@ -44,22 +39,22 @@ class NetherlandsSpec extends ObjectBehavior
 
     public function it_should_have_new_years_day(): void
     {
-        $this->isHoliday(new \DateTimeImmutable('2020-01-01'))->shouldBe(true);
+        $this->isHoliday(new \DateTimeImmutable('2021-01-01'))->shouldBe(true);
     }
 
     public function it_should_have_international_workers_day(): void
     {
-        $this->isHoliday(new \DateTimeImmutable('2020-05-01'))->shouldBe(true);
+        $this->isHoliday(new \DateTimeImmutable('2021-05-01'))->shouldBe(true);
     }
 
     public function it_should_have_valentines_day(): void
     {
-        $this->isHoliday(new \DateTimeImmutable('2020-02-14'))->shouldBe(true);
+        $this->isHoliday(new \DateTimeImmutable('2021-02-14'))->shouldBe(true);
     }
 
     public function it_should_have_world_animal_day(): void
     {
-        $this->isHoliday(new \DateTimeImmutable('2020-10-04'))->shouldBe(true);
+        $this->isHoliday(new \DateTimeImmutable('2021-10-04'))->shouldBe(true);
     }
 
     public function it_should_not_have_world_animal_day_on_or_before_1931(): void
@@ -70,7 +65,7 @@ class NetherlandsSpec extends ObjectBehavior
 
     public function it_should_have_st_martins_day(): void
     {
-        $this->isHoliday(new \DateTimeImmutable('2020-11-11'))->shouldBe(true);
+        $this->isHoliday(new \DateTimeImmutable('2021-11-11'))->shouldBe(true);
     }
 
     public function it_should_have_fathers_day(): void
@@ -78,7 +73,7 @@ class NetherlandsSpec extends ObjectBehavior
         $key = 'fathersDay';
 
         $this->getHoliday($key)->shouldBeAnInstanceOf(Holiday::class);
-        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2020-06-21');
+        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2021-06-20');
     }
 
     public function it_should_have_mothers_day(): void
@@ -86,7 +81,7 @@ class NetherlandsSpec extends ObjectBehavior
         $key = 'mothersDay';
 
         $this->getHoliday($key)->shouldBeAnInstanceOf(Holiday::class);
-        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2020-05-10');
+        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2021-05-09');
     }
 
     public function it_should_have_easter(): void
@@ -94,7 +89,7 @@ class NetherlandsSpec extends ObjectBehavior
         $key = 'easter';
 
         $this->getHoliday($key)->shouldBeAnInstanceOf(Holiday::class);
-        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2020-04-12');
+        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2021-04-04');
     }
 
     public function it_should_have_easter_monday(): void
@@ -102,13 +97,13 @@ class NetherlandsSpec extends ObjectBehavior
         $key = 'easterMonday';
 
         $this->getHoliday($key)->shouldBeAnInstanceOf(Holiday::class);
-        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2020-04-13');
+        $this->getHoliday($key)->format('Y-m-d')->shouldBe('2021-04-05');
     }
 
     public function it_should_have_kingsday(): void
     {
         $this->getHoliday(self::KINGS_DAY)->shouldBeAnInstanceOf(Holiday::class);
-        $this->getHoliday(self::KINGS_DAY)->format('Y-m-d')->shouldBe('2020-04-27');
+        $this->getHoliday(self::KINGS_DAY)->format('Y-m-d')->shouldBe('2021-04-27');
     }
 
     public function it_should_have_kingsday_on_2014(): void
