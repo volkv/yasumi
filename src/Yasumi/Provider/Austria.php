@@ -29,7 +29,7 @@ class Austria extends AbstractProvider
     use ChristianHolidays;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'AT';
@@ -66,6 +66,14 @@ class Austria extends AbstractProvider
 
         // Calculate other holidays
         $this->calculateNationalDay();
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Austria',
+            'https://de.wikipedia.org/wiki/Feiertage_in_%C3%96sterreich',
+        ];
     }
 
     /**

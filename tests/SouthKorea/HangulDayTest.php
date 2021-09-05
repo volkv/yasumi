@@ -20,12 +20,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Hangul Day in South Korea.
  */
-class HangulDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class HangulDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
@@ -60,6 +60,42 @@ class HangulDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInte
                 new DateTime("$year-10-9", new DateTimeZone(self::TIMEZONE))
             );
         }
+    }
+
+    /**
+     * Tests the substitute holiday defined in this test.
+     *
+     * @throws Exception
+     * @throws ReflectionException
+     */
+    public function testSubstituteHoliday(): void
+    {
+        $tz = new DateTimeZone(self::TIMEZONE);
+
+        // Before 2022
+        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2016);
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2021,
+            new DateTime('2021-10-11', $tz)
+        );
+
+        // By saturday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2027,
+            new DateTime('2027-10-11', $tz)
+        );
+
+        // By sunday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2022,
+            new DateTime('2022-10-10', $tz)
+        );
     }
 
     /**

@@ -28,7 +28,7 @@ class Belgium extends AbstractProvider
     use ChristianHolidays;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'BE';
@@ -70,5 +70,12 @@ class Belgium extends AbstractProvider
             'en' => 'Belgian National Day',
             'nl' => 'nationale feestdag',
         ], new DateTime("$this->year-7-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)), $this->locale));
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Belgium',
+        ];
     }
 }

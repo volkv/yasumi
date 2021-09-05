@@ -29,7 +29,7 @@ class Germany extends AbstractProvider
     use ChristianHolidays;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'DE';
@@ -67,6 +67,14 @@ class Germany extends AbstractProvider
         if (2017 === $this->year) {
             $this->addHoliday($this->reformationDay($this->year, $this->timezone, $this->locale));
         }
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Germany',
+            'https://de.wikipedia.org/wiki/Gesetzliche_Feiertage_in_Deutschland',
+        ];
     }
 
     /**

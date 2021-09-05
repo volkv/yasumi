@@ -31,7 +31,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
 class Manitoba extends Canada
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'CA-MB';
@@ -89,7 +89,7 @@ class Manitoba extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateLouisRielDay(): void
+    private function calculateLouisRielDay(): void
     {
         if ($this->year < 2008) {
             return;

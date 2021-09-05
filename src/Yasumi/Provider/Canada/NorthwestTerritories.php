@@ -21,14 +21,14 @@ use Yasumi\Provider\Canada;
 /**
  * Provider for all holidays in Northwest Territories (Canada).
  *
- * Northwest Territories is a territory of Canada.
+ * Northwest Territories is a province of Canada.
  *
  * @see https://en.wikipedia.org/wiki/Northwest_Territories
  */
 class NorthwestTerritories extends Canada
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'CA-NT';

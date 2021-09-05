@@ -20,12 +20,12 @@ use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
-use Yasumi\tests\YasumiTestCaseInterface;
+use Yasumi\tests\HolidayTestCase;
 
 /**
  * Class for testing Independence Movement Day in South Korea.
  */
-class IndependenceMovementDayTest extends SouthKoreaBaseTestCase implements YasumiTestCaseInterface
+class IndependenceMovementDayTest extends SouthKoreaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday.
@@ -51,6 +51,49 @@ class IndependenceMovementDayTest extends SouthKoreaBaseTestCase implements Yasu
             self::HOLIDAY,
             $year,
             new DateTime("$year-3-1", new DateTimeZone(self::TIMEZONE))
+        );
+    }
+
+    /**
+     * Tests the substitute holiday defined in this test.
+     *
+     * @throws Exception
+     * @throws ReflectionException
+     */
+    public function testSubstituteHoliday(): void
+    {
+        $tz = new DateTimeZone(self::TIMEZONE);
+
+        // Before 2022
+        $this->assertNotSubstituteHoliday(self::REGION, self::HOLIDAY, 2020);
+
+        // By saturday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2025,
+            new DateTime('2025-3-3', $tz)
+        );
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2031,
+            new DateTime('2031-3-3', $tz)
+        );
+
+        // By sunday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2026,
+            new DateTime('2026-3-2', $tz)
+        );
+        // By sunday
+        $this->assertSubstituteHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            2037,
+            new DateTime('2037-3-2', $tz)
         );
     }
 

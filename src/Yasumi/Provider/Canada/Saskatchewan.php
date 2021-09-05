@@ -31,7 +31,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
 class Saskatchewan extends Canada
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'CA-SK';
@@ -65,7 +65,7 @@ class Saskatchewan extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateSaskatchewanDay(): void
+    private function calculateSaskatchewanDay(): void
     {
         if ($this->year < 1879) {
             return;

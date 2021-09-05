@@ -28,8 +28,15 @@ use Yasumi\Provider\UnitedKingdom;
 class Wales extends UnitedKingdom
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'GB-WLS';
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Holidays_in_Wales',
+        ];
+    }
 }

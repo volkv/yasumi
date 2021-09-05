@@ -32,7 +32,7 @@ use Yasumi\Provider\Germany;
 class Hamburg extends Germany
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'DE-HH';
@@ -71,7 +71,7 @@ class Hamburg extends Germany
             new Holiday(
                 'dayOfReformation',
                 [],
-                new \DateTime("{$this->year}-10-31", new \DateTimeZone($this->timezone)),
+                new \DateTime("$this->year-10-31", new \DateTimeZone($this->timezone)),
                 $this->locale,
                 Holiday::TYPE_OFFICIAL
             )

@@ -28,7 +28,7 @@ class Italy extends AbstractProvider
     use ChristianHolidays;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'IT';
@@ -62,6 +62,14 @@ class Italy extends AbstractProvider
         // Calculate other holidays
         $this->calculateLiberationDay();
         $this->calculateRepublicDay();
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Italy',
+            'https://it.wikipedia.org/wiki/Festivit%C3%A0_in_Italia',
+        ];
     }
 
     /**

@@ -16,11 +16,12 @@ namespace Yasumi\tests\USA;
 
 use ReflectionException;
 use Yasumi\Holiday;
+use Yasumi\tests\ProviderTestCase;
 
 /**
  * Class for testing holidays in the USA.
  */
-class USATest extends USABaseTestCase
+class USATest extends USABaseTestCase implements ProviderTestCase
 {
     /**
      * @var int year random year number used for all tests in this Test Case
@@ -42,7 +43,7 @@ class USATest extends USABaseTestCase
      */
     public function testOfficialHolidays(): void
     {
-        $this->assertDefinedHolidays([
+        $holidays = [
             'newYearsDay',
             'martinLutherKingDay',
             'washingtonsBirthday',
@@ -53,7 +54,13 @@ class USATest extends USABaseTestCase
             'veteransDay',
             'thanksgivingDay',
             'christmasDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
+        ];
+
+        if (2021 <= $this->year) {
+            $holidays[] = 'juneteenth';
+        }
+
+        $this->assertDefinedHolidays($holidays, self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
     /**
@@ -94,5 +101,13 @@ class USATest extends USABaseTestCase
     public function testOtherHolidays(): void
     {
         $this->assertDefinedHolidays([], self::REGION, $this->year, Holiday::TYPE_OTHER);
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testSources(): void
+    {
+        $this->assertSources(self::REGION, 1);
     }
 }

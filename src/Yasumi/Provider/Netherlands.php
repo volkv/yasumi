@@ -29,7 +29,7 @@ class Netherlands extends AbstractProvider
     use ChristianHolidays;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'NL';
@@ -87,6 +87,14 @@ class Netherlands extends AbstractProvider
         $this->calculateQueensday();
         $this->calculateKingsday();
         $this->calculateCommemorationLiberationDay();
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_the_Netherlands',
+            'https://nl.wikipedia.org/wiki/Feestdagen_in_Nederland',
+        ];
     }
 
     /**

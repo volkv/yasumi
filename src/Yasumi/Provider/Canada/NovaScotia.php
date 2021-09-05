@@ -31,7 +31,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
 class NovaScotia extends Canada
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'CA-NS';
@@ -89,7 +89,7 @@ class NovaScotia extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateHeritageDay(): void
+    private function calculateHeritageDay(): void
     {
         if ($this->year < 2015) {
             return;

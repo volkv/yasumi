@@ -31,7 +31,7 @@ use Yasumi\Provider\DateTimeZoneFactory;
 class PrinceEdwardIsland extends Canada
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'CA-PE';
@@ -65,7 +65,7 @@ class PrinceEdwardIsland extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateIslanderDay(): void
+    private function calculateIslanderDay(): void
     {
         if ($this->year < 2009) {
             return;
@@ -89,7 +89,7 @@ class PrinceEdwardIsland extends Canada
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    protected function calculateGoldCupParadeDay(): void
+    private function calculateGoldCupParadeDay(): void
     {
         if ($this->year < 1962) {
             return;

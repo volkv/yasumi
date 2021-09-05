@@ -35,7 +35,7 @@ class SouthAfrica extends AbstractProvider
     use ChristianHolidays;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'ZA';
@@ -78,6 +78,15 @@ class SouthAfrica extends AbstractProvider
 
         // Determine whether any of the holidays is substituted on another day
         $this->calculateSubstituteHolidays();
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_South_Africa',
+            'https://af.wikipedia.org/wiki/Lys_van_openbare_vakansiedae_in_Suid-Afrika',
+            'https://zu.wikipedia.org/wiki/Amaholide_omphakathi_eNingizimu_Afrika',
+        ];
     }
 
     /**

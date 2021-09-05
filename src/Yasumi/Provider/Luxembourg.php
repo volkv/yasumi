@@ -30,7 +30,7 @@ class Luxembourg extends AbstractProvider
     public const EUROPE_DAY_START_YEAR = 2019;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'LU';
@@ -61,6 +61,14 @@ class Luxembourg extends AbstractProvider
         $this->addHoliday($this->secondChristmasDay($this->year, $this->timezone, $this->locale));
     }
 
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Luxembourg',
+            'https://lb.wikipedia.org/wiki/Gesetzlech_Feierdeeg_zu_L%C3%ABtzebuerg',
+        ];
+    }
+
     /**
      * Europe Day.
      *
@@ -77,7 +85,7 @@ class Luxembourg extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateEuropeDay(): void
+    private function calculateEuropeDay(): void
     {
         if ($this->year >= 2019) {
             $this->addHoliday(new Holiday('europeDay', [
@@ -103,7 +111,7 @@ class Luxembourg extends AbstractProvider
      * @throws UnknownLocaleException
      * @throws \Exception
      */
-    public function calculateNationalDay(): void
+    private function calculateNationalDay(): void
     {
         $this->addHoliday(new Holiday('nationalDay', [
             'en_US' => 'National day',

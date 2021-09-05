@@ -25,14 +25,14 @@ use Yasumi\SubstituteHoliday;
 /**
  * Provider for all holidays in Newfoundland and Labrador (Canada).
  *
- * Manitoba is a province of Canada.
+ * Newfoundland and Labrador is a province of Canada.
  *
  * @see https://en.wikipedia.org/wiki/Newfoundland_and_Labrador
  */
 class NewfoundlandAndLabrador extends Canada
 {
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'CA-NL';

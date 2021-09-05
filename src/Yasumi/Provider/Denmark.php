@@ -29,7 +29,7 @@ class Denmark extends AbstractProvider
     use ChristianHolidays;
 
     /**
-     * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
+     * Code to identify this Holiday Provider. Typically, this is the ISO3166 code corresponding to the respective
      * country or sub-region.
      */
     public const ID = 'DK';
@@ -74,6 +74,13 @@ class Denmark extends AbstractProvider
         if ($winterTime instanceof Holiday) {
             $this->addHoliday($winterTime);
         }
+    }
+
+    public function getSources(): array
+    {
+        return [
+            'https://en.wikipedia.org/wiki/Public_holidays_in_Denmark',
+        ];
     }
 
     /**
