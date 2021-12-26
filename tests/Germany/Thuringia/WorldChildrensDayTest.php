@@ -12,24 +12,29 @@ declare(strict_types=1);
  * @author Sacha Telgenhof <me@sachatelgenhof.com>
  */
 
-namespace Yasumi\tests\Germany\RhinelandPalatinate;
+namespace Yasumi\tests\Germany\Thuringia;
 
-use Cassandra\Date;
 use DateTime;
+use DateTimeZone;
 use Exception;
 use ReflectionException;
 use Yasumi\Holiday;
 use Yasumi\tests\HolidayTestCase;
 
 /**
- * Class containing tests for All Saints' Day in Rhineland Palatinate (Germany).
+ * Class for testing World Children's Day in Thuringia (Germany).
  */
-class AllSaintsDayTest extends RhinelandPalatinateBaseTestCase implements HolidayTestCase
+class WorldChildrensDayTest extends ThuringiaBaseTestCase implements HolidayTestCase
 {
     /**
      * The name of the holiday to be tested.
      */
-    public const HOLIDAY = 'allSaintsDay';
+    public const HOLIDAY = 'worldChildrensDay';
+
+    /**
+     * The year in which the holiday was first established.
+     */
+    public const ESTABLISHMENT_YEAR = 2019;
 
     /**
      * Tests the holiday defined in this test.
@@ -49,13 +54,34 @@ class AllSaintsDayTest extends RhinelandPalatinateBaseTestCase implements Holida
     /**
      * Returns a list of random test dates used for assertion of the holiday defined in this test.
      *
-     * @return array<DateTime> list of test dates for the holiday defined in this test
+     * @return array list of test dates for the holiday defined in this test
      *
      * @throws Exception
      */
     public function HolidayDataProvider(): array
     {
-        return $this->generateRandomDates(11, 1, self::TIMEZONE);
+        $data = [];
+
+        for ($y = 0; $y < self::TEST_ITERATIONS; ++$y) {
+            $year = $this->generateRandomYear(self::ESTABLISHMENT_YEAR);
+            $data[] = [$year, new DateTime("$year-09-20", new DateTimeZone(self::TIMEZONE))];
+        }
+
+        return $data;
+    }
+
+    /**
+     * Tests the holiday defined in this test before establishment.
+     *
+     * @throws ReflectionException
+     */
+    public function testHolidayBeforeEstablishment(): void
+    {
+        $this->assertNotHoliday(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(1000, self::ESTABLISHMENT_YEAR - 1)
+        );
     }
 
     /**
@@ -68,8 +94,8 @@ class AllSaintsDayTest extends RhinelandPalatinateBaseTestCase implements Holida
         $this->assertTranslatedHolidayName(
             self::REGION,
             self::HOLIDAY,
-            $this->generateRandomYear(),
-            [self::LOCALE => 'Allerheiligen']
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            [self::LOCALE => 'Weltkindertag']
         );
     }
 
@@ -80,6 +106,11 @@ class AllSaintsDayTest extends RhinelandPalatinateBaseTestCase implements Holida
      */
     public function testHolidayType(): void
     {
-        $this->assertHolidayType(self::REGION, self::HOLIDAY, $this->generateRandomYear(), Holiday::TYPE_OFFICIAL);
+        $this->assertHolidayType(
+            self::REGION,
+            self::HOLIDAY,
+            $this->generateRandomYear(self::ESTABLISHMENT_YEAR),
+            Holiday::TYPE_OFFICIAL
+        );
     }
 }

@@ -49,10 +49,12 @@ class SaarlandTest extends SaarlandBaseTestCase implements ProviderTestCase
             'easterMonday',
             'internationalWorkersDay',
             'ascensionDay',
+            'corpusChristi',
             'pentecostMonday',
             'germanUnityDay',
             'christmasDay',
             'secondChristmasDay',
+            'allSaintsDay',
         ], self::REGION, $this->year, Holiday::TYPE_OFFICIAL);
     }
 
@@ -93,11 +95,7 @@ class SaarlandTest extends SaarlandBaseTestCase implements ProviderTestCase
      */
     public function testOtherHolidays(): void
     {
-        $this->assertDefinedHolidays([
-            'corpusChristi',
-            'assumptionOfMary',
-            'allSaintsDay',
-        ], self::REGION, $this->year, Holiday::TYPE_OTHER);
+        $this->assertDefinedHolidays(['assumptionOfMary'], self::REGION, $this->year, Holiday::TYPE_OTHER);
     }
 
     /**
