@@ -23,7 +23,6 @@ use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Filters\BetweenFilter;
 use Yasumi\Filters\OnFilter;
 use Yasumi\Holiday;
-use Yasumi\HolidayInterface;
 use Yasumi\ProviderInterface;
 use Yasumi\SubstituteHoliday;
 use Yasumi\TranslationsInterface;
@@ -46,7 +45,6 @@ abstract class AbstractProvider implements ProviderInterface, Countable, Iterato
      *                          where the weekend starts on Saturday and ends on Sunday (0 = Sunday, 1 = Monday, etc.).
      */
     public const WEEKEND_DATA = [
-
         // Thursday and Friday
         'AF' => [4, 5], // Afghanistan
 
