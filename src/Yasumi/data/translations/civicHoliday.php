@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Civic Holiday',
     'fr' => 'Premier lundi d’août',
+    'ru' => 'Гражданский праздник',
 ];

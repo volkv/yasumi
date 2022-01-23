@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Saskatchewan Day',
     'fr' => 'Jour Saskatchewan',
+    'ru' => 'День Саскачевана',
 ];

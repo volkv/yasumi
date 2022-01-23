@@ -21,4 +21,5 @@ return [
     'ko' => '신년전야',
     'lv' => 'Vecgada vakars',
     'sv' => 'nyårsafton',
+    'ru' => 'Канун Нового года',
 ];

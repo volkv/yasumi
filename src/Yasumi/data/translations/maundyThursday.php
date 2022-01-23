@@ -21,4 +21,5 @@ return [
     'en' => 'Maundy Thursday',
     'es' => 'Jueves Santo',
     'nb' => 'skjærtorsdag',
+    'ru' => 'Великий четверг',
 ];

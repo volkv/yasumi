@@ -30,4 +30,5 @@ return [
     'ro' => 'Ajunul Crãciunului',
     'sk' => 'Štedrý deň',
     'sv' => 'julafton',
+    'ru' => 'Канун Рождества',
 ];

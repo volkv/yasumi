@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Gold Cup Parade Day',
     'fr' => 'Défilé de la Coupe d’or',
+    'ru' => 'День парада золотых кубков',
 ];

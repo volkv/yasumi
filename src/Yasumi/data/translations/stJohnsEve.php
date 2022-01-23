@@ -18,4 +18,5 @@ return [
     'da' => 'sankthansaften',
     'en' => 'St. John’s Eve',
     'sv' => 'midsommarafton',
+    'ru' => 'Канун Святого Иоанна',
 ];

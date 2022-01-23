@@ -21,4 +21,5 @@ return [
     'es' => 'San José',
     'fr' => 'Saint-Joseph',
     'it' => 'San Giuseppe',
+    'ru' => 'День Святого Иосифа',
 ];

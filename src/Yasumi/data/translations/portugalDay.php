@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Portugal Day',
     'pt' => 'Dia de Portugal',
+    'ru' => 'День Португалии',
 ];

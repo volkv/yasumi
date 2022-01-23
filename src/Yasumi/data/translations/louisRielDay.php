@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Louis Riel Day',
     'fr' => 'Journée Louis Riel',
+    'ru' => 'День Луи Риэля',
 ];

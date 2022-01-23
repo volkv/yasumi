@@ -16,4 +16,5 @@ declare(strict_types=1);
 return [
     'de' => 'Tag der Befreiung',
     'en' => 'Day of Liberation',
+    'ru' => 'День освобождения',
 ];

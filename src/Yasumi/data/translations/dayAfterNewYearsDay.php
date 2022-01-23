@@ -18,4 +18,5 @@ return [
     'en' => 'Day after New Year’s Day',
     'ko' => '새해 연휴',
     'ro' => 'A doua zi după Anul Nou',
+    'ru' => 'День после Нового года',
 ];

@@ -19,4 +19,5 @@ return [
     'en' => 'Summertime',
     'ko' => '서머타임',
     'nl' => 'zomertijd',
+    'ru' => 'Лето',
 ];

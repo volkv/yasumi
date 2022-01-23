@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'de' => 'Reformationstag',
     'en' => 'Reformation Day',
+    'ru' => 'День Реформации',
 ];

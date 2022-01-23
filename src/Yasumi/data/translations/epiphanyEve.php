@@ -17,5 +17,6 @@ declare(strict_types=1);
 return [
     'da' => 'helligtrekongersaften',
     'en' => 'Epiphany Eve',
+    'ru' => 'Крещенский вечер',
     'sv' => 'trettondagsafton',
 ];

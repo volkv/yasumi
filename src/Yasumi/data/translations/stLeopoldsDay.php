@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Saint Leopold’s Day',
     'de_AT' => 'Leopold',
+    'ru' => 'День Святого Леопольда',
 ];

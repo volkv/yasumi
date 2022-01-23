@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Restoration of Independence',
     'pt' => 'Restauração da Independência',
+    'ru' => 'Восстановление независимости',
 ];

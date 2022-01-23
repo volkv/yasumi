@@ -38,4 +38,5 @@ return [
     'ro' => 'A doua zi de Crăciun',
     'sk' => 'Druhý sviatok vianočný',
     'sv' => 'annandag jul',
+    'ru' => 'День подарков',
 ];

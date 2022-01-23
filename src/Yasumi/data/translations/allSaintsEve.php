@@ -18,4 +18,5 @@ return [
     'da' => 'allehelgensaften',
     'en' => 'All Saints’ Eve',
     'sv' => 'alla helgons afton',
+    'ru' => 'Канун всех святых',
 ];

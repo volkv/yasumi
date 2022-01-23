@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Discovery Day',
     'fr' => 'Journée découverte',
+    'ru' => 'День открытия',
 ];

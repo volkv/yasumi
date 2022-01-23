@@ -24,4 +24,5 @@ return [
     'ga' => 'Lá Fhéile Stiofáin',
     'hr' => 'Sveti Stjepan',
     'it' => 'Santo Stefano',
+    'ru' => 'День Святого Стефана',
 ];

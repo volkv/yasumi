@@ -26,4 +26,5 @@ return [
     'nb' => 'Kristi himmelfartsdag',
     'nl' => 'Hemelvaart',
     'sv' => 'Kristi himmelsfärdsdag',
+    'ru' => 'Вознесение',
 ];

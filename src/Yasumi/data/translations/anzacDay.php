@@ -16,4 +16,5 @@ declare(strict_types=1);
 // Translations for ANZAC Day
 return [
     'en' => 'ANZAC Day',
+    'ru' => 'День АНЗАК',
 ];

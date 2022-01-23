@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'National Day For Truth And Reconciliation',
     'fr' => 'la Journée nationale de la vérité et de la réconciliation',
+    'ru' => 'Национальный день правды и примирения',
 ];

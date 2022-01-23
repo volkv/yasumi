@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'cy' => 'Dydd Gŵyl Dewi',
     'en' => 'St. David’s Day',
+    'ru' => 'День Святого Давида',
 ];

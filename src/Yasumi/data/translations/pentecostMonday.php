@@ -27,4 +27,5 @@ return [
     'nl' => 'tweede pinksterdag',
     'nl_BE' => 'pinkstermaandag',
     'ro' => 'A doua zi de Rusalii',
+    'ru' => 'Духов день',
 ];

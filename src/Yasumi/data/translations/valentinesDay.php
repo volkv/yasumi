@@ -27,4 +27,5 @@ return [
     'nl' => 'Valentijnsdag',
     'pl' => 'Walentynki',
     'pt' => 'Dia dos Namorados',
+    'ru' => 'День святого Валентина',
 ];

@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Terry Fox Day',
     'fr' => 'Journée Terry Fox',
+    'ru' => 'День Терри Фокса',
 ];

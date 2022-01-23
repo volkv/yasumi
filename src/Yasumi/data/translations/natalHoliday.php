@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Natal Holiday',
     'fr' => 'Jour de la Fondation',
+    'ru' => 'Натальный праздник',
 ];

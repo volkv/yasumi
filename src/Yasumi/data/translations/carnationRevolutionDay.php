@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Freedom Day',
     'pt' => 'Dia da Liberdade',
+    'ru' => 'День свободы',
 ];

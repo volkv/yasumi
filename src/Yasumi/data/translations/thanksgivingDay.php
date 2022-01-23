@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Thanksgiving',
     'fr' => 'Action de grâce',
+    'ru' => 'День Благодарения',
 ];

@@ -25,4 +25,5 @@ return [
     'lt' => 'Rasos ir Joninių diena',
     'lv' => 'Jāņi',
     'sv' => 'midsommardagen',
+    'ru' => 'День Святого Иоанна',
 ];

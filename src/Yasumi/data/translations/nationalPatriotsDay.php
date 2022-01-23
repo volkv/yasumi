@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'National Patriot’s Day',
     'fr' => 'Journée nationale des patriotes',
+    'ru' => 'День национального патриота',
 ];

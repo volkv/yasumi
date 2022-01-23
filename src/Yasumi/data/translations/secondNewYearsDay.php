@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'da' => '2. nytårsdag',
     'en' => '2nd January',
+    'ru' => '2 января',
 ];

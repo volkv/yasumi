@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Plebiscite Day',
     'de_AT' => 'Tag der Volksabstimmung',
+    'ru' => 'День плебисцита',
 ];

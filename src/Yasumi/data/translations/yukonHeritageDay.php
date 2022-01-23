@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Yukon Heritage Day',
     'fr' => 'Journée du patrimoine du Yukon',
+    'ru' => 'День наследия Юкона',
 ];

@@ -23,4 +23,5 @@ return [
     'pl' => 'Boże Ciało',
     'pt' => 'Corpus Christi',
     'pt_PT' => 'Corpo de Deus',
+    'ru' => 'Тело Христа',
 ];

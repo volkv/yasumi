@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Islander Day',
     'fr' => 'Fête des Insulaires',
+    'ru' => 'День островитянина',
 ];

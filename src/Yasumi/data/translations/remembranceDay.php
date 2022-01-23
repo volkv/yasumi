@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Remembrance Day',
     'fr' => 'Jour du souvenir',
+    'ru' => 'День памяти',
 ];

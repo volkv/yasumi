@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Implantation of the Portuguese Republic',
     'pt' => 'Implantação da República Portuguesa',
+    'ru' => 'Имплантация Португальской Республики',
 ];

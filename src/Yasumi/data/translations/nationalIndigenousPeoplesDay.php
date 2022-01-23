@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'National Indigenous Peoples Day',
     'fr' => 'Journée nationale des peuples autochtones',
+    'ru' => 'Национальный день коренных народов',
 ];

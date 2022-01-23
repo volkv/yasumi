@@ -31,4 +31,5 @@ return [
     'pl' => 'Święto Trzech Króli',
     'sk' => 'Zjavenie Pána / Traja králi',
     'sv' => 'trettondedag jul',
+    'ru' => 'Богоявление',
 ];

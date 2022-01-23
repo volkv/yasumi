@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Canada Day',
     'fr' => 'Fête du Canada',
+    'ru' => 'День Канады',
 ];

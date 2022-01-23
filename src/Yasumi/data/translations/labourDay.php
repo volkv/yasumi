@@ -23,4 +23,5 @@ return [
     'sk' => 'Sviatok práce',
     'fr' => 'Fête du travail',
     'tr' => 'Emek ve Dayanışma Günü',
+    'ru' => 'День труда',
 ];

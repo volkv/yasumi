@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Saint Florian’s Day',
     'de_AT' => 'Florian',
+    'ru' => 'День Святого Флориана',
 ];

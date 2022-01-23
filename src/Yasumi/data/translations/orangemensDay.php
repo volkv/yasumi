@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Orangemen’s Day',
     'fr' => 'Fête des orangistes',
+    'ru' => 'День оранжистов',
 ];

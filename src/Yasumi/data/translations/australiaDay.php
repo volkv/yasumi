@@ -16,4 +16,5 @@ declare(strict_types=1);
 // Translations for Australia Day
 return [
     'en' => 'Australia Day',
+    'ru' => 'День Австралии',
 ];

@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'World Animal Day',
     'nl' => 'Werelddierendag',
+    'ru' => 'Всемирный день животных',
 ];

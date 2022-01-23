@@ -16,4 +16,5 @@ declare(strict_types=1);
 // Translations for Waitangi Day
 return [
     'en' => 'Waitangi Day',
+    'ru' => 'День Вайтанги',
 ];

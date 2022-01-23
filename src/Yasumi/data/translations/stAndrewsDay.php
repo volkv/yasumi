@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'St. Andrew’s Day',
     'ro' => 'Sfântul Andrei',
+    'ru' => 'День Святого Андрея',
 ];

@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Saint-Jean-Baptiste Day',
     'fr' => 'Fête de la Saint-Jean-Baptiste',
+    'ru' => 'День святого Иоанна Крестителя',
 ];

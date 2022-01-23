@@ -16,5 +16,6 @@ declare(strict_types=1);
 // Translations for Family Day
 return [
     'en' => 'Family Day',
+    'ru' => 'День семьи',
     'fr' => 'Fête de la famille',
 ];

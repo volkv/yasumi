@@ -18,4 +18,5 @@ return [
     'en' => 'All Souls’ Day',
     'lt' => 'Vėlinės',
     'pt' => 'Dia de Finados',
+    'ru' => 'День мертвых',
 ];

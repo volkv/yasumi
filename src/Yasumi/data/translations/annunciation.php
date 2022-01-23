@@ -18,4 +18,5 @@ return [
     'el' => 'Ευαγγελισμός της Θεοτόκου',
     'en' => 'Annunciation',
     'fr' => 'Annonciation',
+    'ru' => 'Благовещение',
 ];

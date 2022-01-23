@@ -18,4 +18,5 @@ return [
     'en' => 'St. Martin’s Day',
     'nl' => 'Sint Maarten',
     'de_AT' => 'Martin',
+    'ru' => 'День Святого Мартина',
 ];

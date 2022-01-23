@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Nova Scotia Heritage Day',
     'fr' => 'Journée du patrimoine de la Nouvelle-Écosse',
+    'ru' => 'День наследия Новой Шотландии',
 ];

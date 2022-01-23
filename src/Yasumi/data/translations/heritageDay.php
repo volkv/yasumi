@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Heritage Day',
     'fr' => 'Fête du patrimoine',
+    'ru' => 'День наследия',
 ];

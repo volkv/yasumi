@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Victoria Day',
     'fr' => 'Fête de la Reine',
+    'ru' => 'День Виктории',
 ];

@@ -20,4 +20,5 @@ return [
     'fr' => 'Armistice',
     'fr_FR' => 'Armistice 1918',
     'nl' => 'Wapenstilstand',
+    'ru' => 'День перемирия',
 ];

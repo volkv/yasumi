@@ -17,4 +17,5 @@ declare(strict_types=1);
 return [
     'en' => 'Walpurgis Night',
     'sv' => 'valborgsmässoafton',
+    'ru' => 'Вальпургиева ночь',
 ];
